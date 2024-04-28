@@ -11,6 +11,7 @@ class QrState with _$QrState {
   }) = _QrState;
   static QrState get initialState => QrState(
         mobileScannerController: MobileScannerController(
+          formats: [BarcodeFormat.qrCode],
           detectionSpeed: DetectionSpeed.normal,
           facing: CameraFacing.back,
           torchEnabled: true,

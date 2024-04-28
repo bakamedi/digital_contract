@@ -36,7 +36,7 @@ class QRScanView extends StatelessWidget {
                   SizedBox(
                     height: responsive.bhp(84),
                     child: MobileScanner(
-                      controller: qrScanController.mobileScannerController,
+                      controller: qrScanController.mobileScannerController!,
                       errorBuilder: (p0, p1, p2) {
                         return ErrorCameraQrW(
                           responsive: responsive,

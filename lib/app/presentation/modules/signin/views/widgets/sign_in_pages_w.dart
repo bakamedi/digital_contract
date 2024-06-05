@@ -40,6 +40,7 @@ class SignInPagesW extends StatelessWidget {
                 bottom: responsive.bhp(2),
               ),
               child: PrimaryBtn(
+                verticalSpace: responsive.bhp(4),
                 label: 'Ingresar',
                 onPressed: () => sendLogin(context),
               ),

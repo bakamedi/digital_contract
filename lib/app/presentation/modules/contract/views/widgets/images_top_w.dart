@@ -26,18 +26,20 @@ class ImagesTopW extends StatelessWidget {
             showIndicator: true,
             slideIndicator: const CircularSlideIndicator(),
           ),
-          items: [1, 2, 3, 4, 5].map((i) {
-            return Builder(
-              builder: (BuildContext context) {
-                return ExtendedImage.asset(
-                  ImagesPath.HOME_TEST,
-                  width: double.infinity,
-                  height: responsive.hp(20),
-                  fit: BoxFit.fitWidth,
-                );
-              },
-            );
-          }).toList(),
+          items: [1, 2, 3, 4, 5].map(
+            (i) {
+              return Builder(
+                builder: (BuildContext context) {
+                  return ExtendedImage.asset(
+                    ImagesPath.HOME_TEST,
+                    width: double.infinity,
+                    height: responsive.hp(20),
+                    fit: BoxFit.fitWidth,
+                  );
+                },
+              );
+            },
+          ).toList(),
         ),
       ),
     );

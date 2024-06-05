@@ -23,11 +23,11 @@ class AuthService {
         "password": password,
       },
     );
-    print(result);
+
     return result.when(
       success: (statusCode, data) {
         developer.log(data, name: 'login-success');
-        final user = TokenModel.fromJson(data);
+        final user = tokenModelFromJson(data);
         return Either.right(user);
       },
       networkError: (stackTrace) {

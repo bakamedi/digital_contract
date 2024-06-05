@@ -11,6 +11,7 @@ class SignInView extends StatelessWidget {
   Widget build(BuildContext context) {
     final Responsive responsive = Responsive(context);
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SignInPagesW(
         responsive: responsive,
       ),

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -37,7 +39,9 @@ class HttpHelper {
 
       return RequestResult.success(
         statusCode: response.statusCode!,
-        data: parser != null ? parser(response.data) : response.data,
+        data: parser != null
+            ? parser(response.data)
+            : json.encode(response.data) as T,
       );
     } on DioException catch (e, s) {
       if ([

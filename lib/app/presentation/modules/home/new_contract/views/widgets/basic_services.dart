@@ -1,11 +1,13 @@
-import 'package:digital_contract/app/presentation/global/extensions/widgets_ext.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/icons/digital_contract_icons.dart';
+import '../../../../../global/extensions/widgets_ext.dart';
 import 'basic_service_item.dart';
 
 class BasicServices extends StatelessWidget {
-  const BasicServices({super.key});
+  const BasicServices({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

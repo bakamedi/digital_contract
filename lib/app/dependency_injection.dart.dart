@@ -19,7 +19,6 @@ const httpDuration = Duration(
 final _dio = Dio(
   BaseOptions(
     baseUrl: 'http://192.168.100.173:3000', // depa
-    //baseUrl: 'http://192.168.100.61:3000', // casa mama vane
     connectTimeout: httpDuration,
     receiveTimeout: httpDuration,
     sendTimeout: httpDuration,

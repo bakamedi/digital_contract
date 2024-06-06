@@ -27,7 +27,6 @@ class HomeScaffold extends StatelessWidget {
       //if (!context.mounted) {
       //  return;
       //} else {
-      print(item.routePath);
       if (item.routePath == ProfileRoute.path) {
         final ProfileController profileController = profileProvider.read();
         profileController.loadSignatureFile();

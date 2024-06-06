@@ -13,11 +13,13 @@ import 'routes/profile_route.dart';
 import 'routes/qr_scan_route.dart';
 import 'routes/sign_in_route.dart';
 import 'routes/sign_up_route.dart';
+import 'routes/splash_router.dart';
 
 final routerProvider = Provider(
   (ref) => GoRouter(
-    initialLocation: SignInRoute.path,
+    initialLocation: SplashRoute.path,
     routes: [
+      SplashRoute.route,
       SignInRoute.route,
       SignUpRoute.route,
       NewContractRoute.route,

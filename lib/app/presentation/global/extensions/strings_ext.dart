@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 extension StringExt on String {
   bool get isValidEmail {
     return RegExp(
@@ -24,5 +26,37 @@ extension StringExt on String {
     }
 
     return initials;
+  }
+
+  bool get isJwtToken {
+    if (isEmpty) {
+      return isEmpty;
+    }
+    List<String> parts = split('.');
+
+    if (parts.length != 3) {
+      return false;
+    }
+
+    try {
+      base64Url.decode(base64Url.normalize(parts[0]));
+      base64Url.decode(base64Url.normalize(parts[1]));
+      base64Url.decode(base64Url.normalize(parts[2]));
+    } catch (e) {
+      return false;
+    }
+
+    // Intentar decodificar el payload para asegurarse de que es un JSON válido
+    try {
+      String payload =
+          utf8.decode(base64Url.decode(base64Url.normalize(parts[1])));
+      Map<String, dynamic> decodedPayload = jsonDecode(payload);
+
+      // Opcional: Verificar que el payload contiene campos típicos de un JWT
+
+      return decodedPayload.containsKey('iat');
+    } catch (e) {
+      return false;
+    }
   }
 }

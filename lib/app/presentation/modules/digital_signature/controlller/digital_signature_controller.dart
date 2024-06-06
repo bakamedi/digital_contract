@@ -24,13 +24,11 @@ class DigitalSignatureController extends StateNotifier<DigitalSignatureState> {
     super.initialState, {
     required DeviceUtilsRepository deviceUtilsRepository,
   }) : _deviceUtilsRepository = deviceUtilsRepository {
-    print('sajkdajlasd');
     Future.delayed(const Duration(seconds: 3), () {
       state = state.copyWith(
         show: false,
       );
     });
-    print('sajkdajlasd');
   }
 
   GlobalKey<SfSignaturePadState>? get signatureGlobalKey =>

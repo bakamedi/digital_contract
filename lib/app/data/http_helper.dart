@@ -35,8 +35,6 @@ class HttpHelper {
         data: data,
       );
 
-      print(response);
-
       return RequestResult.success(
         statusCode: response.statusCode!,
         data: parser != null
@@ -63,8 +61,6 @@ class HttpHelper {
             data: data,
           );
         }
-        print(e.response!.statusCode!);
-
         return RequestResult.unhandledError(
           exception: e.response!.statusCode!,
           stackTrace: s,

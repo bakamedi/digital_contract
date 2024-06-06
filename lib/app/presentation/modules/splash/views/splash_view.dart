@@ -8,13 +8,13 @@ import '../../../../core/responsive/responsive.dart';
 import '../../../global/extensions/widgets_ext.dart';
 import '../controller/splash_controller.dart';
 
-class SplashView extends ConsumerWidget {
+class SplashView extends StatelessWidget {
   const SplashView({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context, ref) {
+  Widget build(BuildContext context) {
     final Responsive responsive = Responsive(context);
     return Consumer(
       builder: (_, ref, __) {

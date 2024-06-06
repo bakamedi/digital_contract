@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_meedu/notifiers.dart'; // import the StateNotifer class
 import 'package:flutter_meedu/providers.dart';
 import 'package:image_picker/image_picker.dart';
@@ -12,7 +13,39 @@ final newContractProvider =
 class NewContractController extends StateNotifier<NewContractState> {
   NewContractController() : super(NewContractState.initialState);
 
+  PageController? get stepperContractController =>
+      state.stepperContractController;
   List<XFile> get gallery => state.galleryImages;
+  String get nextDoneTxt => state.nextDoneTxt;
+
+  void onChangeTxtByStepper(int page) {
+    if (page == 0) {
+      onlyUpdate(
+        state = state.copyWith(
+          nextDoneTxt: 'Siguiente',
+        ),
+      );
+    } else if (page == 1) {
+      onlyUpdate(
+        state = state.copyWith(
+          nextDoneTxt: 'Crear Propiedad',
+        ),
+      );
+    }
+  }
+
+  void changeStepper() {
+    const duration = Duration(milliseconds: 500);
+    const curve = Curves.ease;
+    final page = stepperContractController!.page;
+    if (page == 1.0) {
+    } else {
+      stepperContractController!.nextPage(
+        duration: duration,
+        curve: curve,
+      );
+    }
+  }
 
   void addAllImage(List<XFile> images) {
     List<XFile> galleryImagesTmp = [...state.galleryImages];

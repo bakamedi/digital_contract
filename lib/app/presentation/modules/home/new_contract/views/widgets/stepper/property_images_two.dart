@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:digital_contract/app/presentation/global/widgets/buttons/primary_btn.dart';
-import 'package:digital_contract/app/presentation/global/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import '../../../../../../../core/responsive/responsive.dart';
 
+import '../../../../../../global/widgets/buttons/primary_btn.dart';
+import '../../../../../../global/widgets/custom_text.dart';
 import '../../../controller/new_contract_controller.dart';
 import '../../../utils/pick_images.dart';
 

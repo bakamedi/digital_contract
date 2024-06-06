@@ -16,6 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NewContractState {
+  PageController? get stepperContractController =>
+      throw _privateConstructorUsedError;
+  String get nextDoneTxt => throw _privateConstructorUsedError;
   List<XFile> get galleryImages => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +32,10 @@ abstract class $NewContractStateCopyWith<$Res> {
           NewContractState value, $Res Function(NewContractState) then) =
       _$NewContractStateCopyWithImpl<$Res, NewContractState>;
   @useResult
-  $Res call({List<XFile> galleryImages});
+  $Res call(
+      {PageController? stepperContractController,
+      String nextDoneTxt,
+      List<XFile> galleryImages});
 }
 
 /// @nodoc
@@ -45,9 +51,19 @@ class _$NewContractStateCopyWithImpl<$Res, $Val extends NewContractState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? stepperContractController = freezed,
+    Object? nextDoneTxt = null,
     Object? galleryImages = null,
   }) {
     return _then(_value.copyWith(
+      stepperContractController: freezed == stepperContractController
+          ? _value.stepperContractController
+          : stepperContractController // ignore: cast_nullable_to_non_nullable
+              as PageController?,
+      nextDoneTxt: null == nextDoneTxt
+          ? _value.nextDoneTxt
+          : nextDoneTxt // ignore: cast_nullable_to_non_nullable
+              as String,
       galleryImages: null == galleryImages
           ? _value.galleryImages
           : galleryImages // ignore: cast_nullable_to_non_nullable
@@ -64,7 +80,10 @@ abstract class _$$NewContractStateImplCopyWith<$Res>
       __$$NewContractStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<XFile> galleryImages});
+  $Res call(
+      {PageController? stepperContractController,
+      String nextDoneTxt,
+      List<XFile> galleryImages});
 }
 
 /// @nodoc
@@ -78,9 +97,19 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? stepperContractController = freezed,
+    Object? nextDoneTxt = null,
     Object? galleryImages = null,
   }) {
     return _then(_$NewContractStateImpl(
+      stepperContractController: freezed == stepperContractController
+          ? _value.stepperContractController
+          : stepperContractController // ignore: cast_nullable_to_non_nullable
+              as PageController?,
+      nextDoneTxt: null == nextDoneTxt
+          ? _value.nextDoneTxt
+          : nextDoneTxt // ignore: cast_nullable_to_non_nullable
+              as String,
       galleryImages: null == galleryImages
           ? _value._galleryImages
           : galleryImages // ignore: cast_nullable_to_non_nullable
@@ -92,10 +121,18 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$NewContractStateImpl extends _NewContractState {
-  const _$NewContractStateImpl({final List<XFile> galleryImages = const []})
+  const _$NewContractStateImpl(
+      {this.stepperContractController,
+      this.nextDoneTxt = 'Siguiente',
+      final List<XFile> galleryImages = const []})
       : _galleryImages = galleryImages,
         super._();
 
+  @override
+  final PageController? stepperContractController;
+  @override
+  @JsonKey()
+  final String nextDoneTxt;
   final List<XFile> _galleryImages;
   @override
   @JsonKey()
@@ -107,7 +144,7 @@ class _$NewContractStateImpl extends _NewContractState {
 
   @override
   String toString() {
-    return 'NewContractState(galleryImages: $galleryImages)';
+    return 'NewContractState(stepperContractController: $stepperContractController, nextDoneTxt: $nextDoneTxt, galleryImages: $galleryImages)';
   }
 
   @override
@@ -115,13 +152,18 @@ class _$NewContractStateImpl extends _NewContractState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NewContractStateImpl &&
+            (identical(other.stepperContractController,
+                    stepperContractController) ||
+                other.stepperContractController == stepperContractController) &&
+            (identical(other.nextDoneTxt, nextDoneTxt) ||
+                other.nextDoneTxt == nextDoneTxt) &&
             const DeepCollectionEquality()
                 .equals(other._galleryImages, _galleryImages));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_galleryImages));
+  int get hashCode => Object.hash(runtimeType, stepperContractController,
+      nextDoneTxt, const DeepCollectionEquality().hash(_galleryImages));
 
   @JsonKey(ignore: true)
   @override
@@ -132,10 +174,16 @@ class _$NewContractStateImpl extends _NewContractState {
 }
 
 abstract class _NewContractState extends NewContractState {
-  const factory _NewContractState({final List<XFile> galleryImages}) =
-      _$NewContractStateImpl;
+  const factory _NewContractState(
+      {final PageController? stepperContractController,
+      final String nextDoneTxt,
+      final List<XFile> galleryImages}) = _$NewContractStateImpl;
   const _NewContractState._() : super._();
 
+  @override
+  PageController? get stepperContractController;
+  @override
+  String get nextDoneTxt;
   @override
   List<XFile> get galleryImages;
   @override

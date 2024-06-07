@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NewContractState {
+  List<bool> get services => throw _privateConstructorUsedError;
   PageController? get stepperContractController =>
       throw _privateConstructorUsedError;
   String get nextDoneTxt => throw _privateConstructorUsedError;
@@ -33,7 +34,8 @@ abstract class $NewContractStateCopyWith<$Res> {
       _$NewContractStateCopyWithImpl<$Res, NewContractState>;
   @useResult
   $Res call(
-      {PageController? stepperContractController,
+      {List<bool> services,
+      PageController? stepperContractController,
       String nextDoneTxt,
       List<XFile> galleryImages});
 }
@@ -51,11 +53,16 @@ class _$NewContractStateCopyWithImpl<$Res, $Val extends NewContractState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? services = null,
     Object? stepperContractController = freezed,
     Object? nextDoneTxt = null,
     Object? galleryImages = null,
   }) {
     return _then(_value.copyWith(
+      services: null == services
+          ? _value.services
+          : services // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
       stepperContractController: freezed == stepperContractController
           ? _value.stepperContractController
           : stepperContractController // ignore: cast_nullable_to_non_nullable
@@ -81,7 +88,8 @@ abstract class _$$NewContractStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {PageController? stepperContractController,
+      {List<bool> services,
+      PageController? stepperContractController,
       String nextDoneTxt,
       List<XFile> galleryImages});
 }
@@ -97,11 +105,16 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? services = null,
     Object? stepperContractController = freezed,
     Object? nextDoneTxt = null,
     Object? galleryImages = null,
   }) {
     return _then(_$NewContractStateImpl(
+      services: null == services
+          ? _value._services
+          : services // ignore: cast_nullable_to_non_nullable
+              as List<bool>,
       stepperContractController: freezed == stepperContractController
           ? _value.stepperContractController
           : stepperContractController // ignore: cast_nullable_to_non_nullable
@@ -122,11 +135,22 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
 
 class _$NewContractStateImpl extends _NewContractState {
   const _$NewContractStateImpl(
-      {this.stepperContractController,
+      {final List<bool> services = const [true, false, false],
+      this.stepperContractController,
       this.nextDoneTxt = 'Siguiente',
       final List<XFile> galleryImages = const []})
-      : _galleryImages = galleryImages,
+      : _services = services,
+        _galleryImages = galleryImages,
         super._();
+
+  final List<bool> _services;
+  @override
+  @JsonKey()
+  List<bool> get services {
+    if (_services is EqualUnmodifiableListView) return _services;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_services);
+  }
 
   @override
   final PageController? stepperContractController;
@@ -144,7 +168,7 @@ class _$NewContractStateImpl extends _NewContractState {
 
   @override
   String toString() {
-    return 'NewContractState(stepperContractController: $stepperContractController, nextDoneTxt: $nextDoneTxt, galleryImages: $galleryImages)';
+    return 'NewContractState(services: $services, stepperContractController: $stepperContractController, nextDoneTxt: $nextDoneTxt, galleryImages: $galleryImages)';
   }
 
   @override
@@ -152,6 +176,7 @@ class _$NewContractStateImpl extends _NewContractState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NewContractStateImpl &&
+            const DeepCollectionEquality().equals(other._services, _services) &&
             (identical(other.stepperContractController,
                     stepperContractController) ||
                 other.stepperContractController == stepperContractController) &&
@@ -162,8 +187,12 @@ class _$NewContractStateImpl extends _NewContractState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, stepperContractController,
-      nextDoneTxt, const DeepCollectionEquality().hash(_galleryImages));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_services),
+      stepperContractController,
+      nextDoneTxt,
+      const DeepCollectionEquality().hash(_galleryImages));
 
   @JsonKey(ignore: true)
   @override
@@ -175,11 +204,14 @@ class _$NewContractStateImpl extends _NewContractState {
 
 abstract class _NewContractState extends NewContractState {
   const factory _NewContractState(
-      {final PageController? stepperContractController,
+      {final List<bool> services,
+      final PageController? stepperContractController,
       final String nextDoneTxt,
       final List<XFile> galleryImages}) = _$NewContractStateImpl;
   const _NewContractState._() : super._();
 
+  @override
+  List<bool> get services;
   @override
   PageController? get stepperContractController;
   @override

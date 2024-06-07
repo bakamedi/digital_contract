@@ -8,6 +8,7 @@ part 'new_contract_state.freezed.dart';
 class NewContractState with _$NewContractState {
   const NewContractState._();
   const factory NewContractState({
+    @Default([true, false, false]) List<bool> services,
     PageController? stepperContractController,
     @Default('Siguiente') String nextDoneTxt,
     @Default([]) List<XFile> galleryImages,

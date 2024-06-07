@@ -31,7 +31,10 @@ class NewContractView extends StatelessWidget {
               page,
             ),
             children: [
-              const PropertyStepperOne(),
+              PropertyStepperOne(
+                newContractController: newContractController,
+                responsive: responsive,
+              ),
               PropertyImagesTwo(
                 newContractController: newContractController,
                 responsive: responsive,

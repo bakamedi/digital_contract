@@ -3,6 +3,7 @@ import 'package:flutter_meedu/notifiers.dart'; // import the StateNotifer class
 import 'package:flutter_meedu/providers.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../utils/service.enum.dart';
 import 'new_contract_state.dart';
 
 final newContractProvider =
@@ -17,6 +18,17 @@ class NewContractController extends StateNotifier<NewContractState> {
       state.stepperContractController;
   List<XFile> get gallery => state.galleryImages;
   String get nextDoneTxt => state.nextDoneTxt;
+  List<bool> get services => state.services;
+
+  void changeServiceValue(ServiceType serviceType) {
+    List<bool> servicesTmp = List<bool>.from(services);
+    servicesTmp[serviceType.index] = !servicesTmp[serviceType.index];
+    onlyUpdate(
+      state = state.copyWith(
+        services: servicesTmp,
+      ),
+    );
+  }
 
   void onChangeTxtByStepper(int page) {
     if (page == 0) {
@@ -48,7 +60,7 @@ class NewContractController extends StateNotifier<NewContractState> {
   }
 
   void addAllImage(List<XFile> images) {
-    List<XFile> galleryImagesTmp = [...state.galleryImages];
+    List<XFile> galleryImagesTmp = List<XFile>.from(state.galleryImages);
     galleryImagesTmp.addAll(images);
     onlyUpdate(
       state = state.copyWith(

@@ -16,9 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$MapsState {
+  Map<MarkerId, Marker> get markers => throw _privateConstructorUsedError;
   Completer<GoogleMapController>? get completerController =>
       throw _privateConstructorUsedError;
-  GoogleMapController? get googleMapcontroller =>
+  GoogleMapController? get googleMapController =>
       throw _privateConstructorUsedError;
   CameraPosition? get initialCameraPosition =>
       throw _privateConstructorUsedError;
@@ -34,8 +35,9 @@ abstract class $MapsStateCopyWith<$Res> {
       _$MapsStateCopyWithImpl<$Res, MapsState>;
   @useResult
   $Res call(
-      {Completer<GoogleMapController>? completerController,
-      GoogleMapController? googleMapcontroller,
+      {Map<MarkerId, Marker> markers,
+      Completer<GoogleMapController>? completerController,
+      GoogleMapController? googleMapController,
       CameraPosition? initialCameraPosition});
 }
 
@@ -52,18 +54,23 @@ class _$MapsStateCopyWithImpl<$Res, $Val extends MapsState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? markers = null,
     Object? completerController = freezed,
-    Object? googleMapcontroller = freezed,
+    Object? googleMapController = freezed,
     Object? initialCameraPosition = freezed,
   }) {
     return _then(_value.copyWith(
+      markers: null == markers
+          ? _value.markers
+          : markers // ignore: cast_nullable_to_non_nullable
+              as Map<MarkerId, Marker>,
       completerController: freezed == completerController
           ? _value.completerController
           : completerController // ignore: cast_nullable_to_non_nullable
               as Completer<GoogleMapController>?,
-      googleMapcontroller: freezed == googleMapcontroller
-          ? _value.googleMapcontroller
-          : googleMapcontroller // ignore: cast_nullable_to_non_nullable
+      googleMapController: freezed == googleMapController
+          ? _value.googleMapController
+          : googleMapController // ignore: cast_nullable_to_non_nullable
               as GoogleMapController?,
       initialCameraPosition: freezed == initialCameraPosition
           ? _value.initialCameraPosition
@@ -82,8 +89,9 @@ abstract class _$$MapsStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Completer<GoogleMapController>? completerController,
-      GoogleMapController? googleMapcontroller,
+      {Map<MarkerId, Marker> markers,
+      Completer<GoogleMapController>? completerController,
+      GoogleMapController? googleMapController,
       CameraPosition? initialCameraPosition});
 }
 
@@ -98,18 +106,23 @@ class __$$MapsStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? markers = null,
     Object? completerController = freezed,
-    Object? googleMapcontroller = freezed,
+    Object? googleMapController = freezed,
     Object? initialCameraPosition = freezed,
   }) {
     return _then(_$MapsStateImpl(
+      markers: null == markers
+          ? _value._markers
+          : markers // ignore: cast_nullable_to_non_nullable
+              as Map<MarkerId, Marker>,
       completerController: freezed == completerController
           ? _value.completerController
           : completerController // ignore: cast_nullable_to_non_nullable
               as Completer<GoogleMapController>?,
-      googleMapcontroller: freezed == googleMapcontroller
-          ? _value.googleMapcontroller
-          : googleMapcontroller // ignore: cast_nullable_to_non_nullable
+      googleMapController: freezed == googleMapController
+          ? _value.googleMapController
+          : googleMapController // ignore: cast_nullable_to_non_nullable
               as GoogleMapController?,
       initialCameraPosition: freezed == initialCameraPosition
           ? _value.initialCameraPosition
@@ -123,21 +136,32 @@ class __$$MapsStateImplCopyWithImpl<$Res>
 
 class _$MapsStateImpl extends _MapsState {
   const _$MapsStateImpl(
-      {this.completerController,
-      this.googleMapcontroller,
+      {final Map<MarkerId, Marker> markers = const {},
+      this.completerController,
+      this.googleMapController,
       this.initialCameraPosition})
-      : super._();
+      : _markers = markers,
+        super._();
+
+  final Map<MarkerId, Marker> _markers;
+  @override
+  @JsonKey()
+  Map<MarkerId, Marker> get markers {
+    if (_markers is EqualUnmodifiableMapView) return _markers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_markers);
+  }
 
   @override
   final Completer<GoogleMapController>? completerController;
   @override
-  final GoogleMapController? googleMapcontroller;
+  final GoogleMapController? googleMapController;
   @override
   final CameraPosition? initialCameraPosition;
 
   @override
   String toString() {
-    return 'MapsState(completerController: $completerController, googleMapcontroller: $googleMapcontroller, initialCameraPosition: $initialCameraPosition)';
+    return 'MapsState(markers: $markers, completerController: $completerController, googleMapController: $googleMapController, initialCameraPosition: $initialCameraPosition)';
   }
 
   @override
@@ -145,17 +169,22 @@ class _$MapsStateImpl extends _MapsState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MapsStateImpl &&
+            const DeepCollectionEquality().equals(other._markers, _markers) &&
             (identical(other.completerController, completerController) ||
                 other.completerController == completerController) &&
-            (identical(other.googleMapcontroller, googleMapcontroller) ||
-                other.googleMapcontroller == googleMapcontroller) &&
+            (identical(other.googleMapController, googleMapController) ||
+                other.googleMapController == googleMapController) &&
             (identical(other.initialCameraPosition, initialCameraPosition) ||
                 other.initialCameraPosition == initialCameraPosition));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, completerController,
-      googleMapcontroller, initialCameraPosition);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_markers),
+      completerController,
+      googleMapController,
+      initialCameraPosition);
 
   @JsonKey(ignore: true)
   @override
@@ -166,15 +195,18 @@ class _$MapsStateImpl extends _MapsState {
 
 abstract class _MapsState extends MapsState {
   const factory _MapsState(
-      {final Completer<GoogleMapController>? completerController,
-      final GoogleMapController? googleMapcontroller,
+      {final Map<MarkerId, Marker> markers,
+      final Completer<GoogleMapController>? completerController,
+      final GoogleMapController? googleMapController,
       final CameraPosition? initialCameraPosition}) = _$MapsStateImpl;
   const _MapsState._() : super._();
 
   @override
+  Map<MarkerId, Marker> get markers;
+  @override
   Completer<GoogleMapController>? get completerController;
   @override
-  GoogleMapController? get googleMapcontroller;
+  GoogleMapController? get googleMapController;
   @override
   CameraPosition? get initialCameraPosition;
   @override

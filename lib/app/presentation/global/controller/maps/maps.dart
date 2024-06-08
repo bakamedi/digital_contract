@@ -25,6 +25,8 @@ class MapsController extends StateNotifier<MapsState> {
 
   CameraPosition? get initialCameraPosition => state.initialCameraPosition;
 
+  Set<Marker> get makers => state.markers.values.toSet();
+
   void initCameraPosition(double lat, double lng) {
     onlyUpdate(
       state = state.copyWith(
@@ -38,7 +40,7 @@ class MapsController extends StateNotifier<MapsState> {
   }
 
   void createMapController(GoogleMapController controller) {
-    state = state.copyWith(googleMapcontroller: controller);
+    state = state.copyWith(googleMapController: controller);
     if (!state.completerController!.isCompleted) {
       state.completerController!.complete(
         controller,
@@ -46,9 +48,41 @@ class MapsController extends StateNotifier<MapsState> {
     }
   }
 
+  Future<LatLng?> onTap(LatLng? position) async {
+    const markerId = MarkerId(
+      '1',
+    );
+    final marker = Marker(
+      markerId: markerId,
+      position: position!,
+    );
+
+    onlyUpdate(
+      state = state.copyWith(
+        markers: {},
+      ),
+    );
+
+    final cameraPosition = CameraPosition(
+      target: position,
+      zoom: ZOOM,
+    );
+    await state.googleMapController!.animateCamera(
+      CameraUpdate.newCameraPosition(cameraPosition),
+    );
+
+    onlyUpdate(
+      state = state.copyWith(
+        markers: {markerId: marker},
+      ),
+    );
+
+    return position;
+  }
+
   @override
   void dispose() {
-    state.googleMapcontroller?.dispose();
+    state.googleMapController?.dispose();
     super.dispose();
   }
 }

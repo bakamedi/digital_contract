@@ -9,8 +9,9 @@ part 'maps_state.freezed.dart';
 class MapsState with _$MapsState {
   const MapsState._();
   const factory MapsState({
+    @Default({}) Map<MarkerId, Marker> markers,
     Completer<GoogleMapController>? completerController,
-    GoogleMapController? googleMapcontroller,
+    GoogleMapController? googleMapController,
     CameraPosition? initialCameraPosition,
   }) = _MapsState;
   static MapsState get initialState => MapsState(

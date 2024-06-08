@@ -1,9 +1,6 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_meedu/notifiers.dart'; // import the StateNotifer class
+import 'package:flutter_meedu/notifiers.dart';
 import 'package:flutter_meedu/providers.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../utils/service.enum.dart';
@@ -70,31 +67,5 @@ class NewContractController extends StateNotifier<NewContractState> {
         galleryImages: galleryImagesTmp,
       ),
     );
-  }
-
-  CameraPosition? get initialCameraPosition => state.initialCameraPosition;
-
-  void initCameraPosition(double lat, double lng) {
-    print(lat);
-    print(lng);
-    onlyUpdate(
-      state = state.copyWith(
-        completerController: Completer(),
-        initialCameraPosition: CameraPosition(
-          target: LatLng(-33.86711, 151.1947171),
-          zoom: 13,
-        ),
-      ),
-    );
-  }
-
-  void createMapController(GoogleMapController controller) {
-    print('------------');
-    print(controller);
-    print('------------');
-    state = state.copyWith(googleMapcontroller: controller);
-    if (!state.completerController!.isCompleted) {
-      state.completerController!.complete(controller);
-    }
   }
 }

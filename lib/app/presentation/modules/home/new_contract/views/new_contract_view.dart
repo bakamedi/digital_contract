@@ -23,7 +23,7 @@ class NewContractView extends StatelessWidget {
         return Scaffold(
           appBar: globalAppBar(
             context,
-            title: 'Contracto De Arrendamiento',
+            title: 'Creación de Arrendamiento',
           ),
           body: PageView(
             controller: newContractController.stepperContractController,
@@ -41,6 +41,7 @@ class NewContractView extends StatelessWidget {
               ),
             ],
           ),
+          resizeToAvoidBottomInset: false,
           floatingActionButton: PrimaryBtn(
             label: newContractController.nextDoneTxt,
             onPressed: () => newContractController.changeStepper(),

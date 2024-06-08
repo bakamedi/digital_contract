@@ -16,12 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NewContractState {
-  Completer<GoogleMapController>? get completerController =>
-      throw _privateConstructorUsedError;
-  GoogleMapController? get googleMapcontroller =>
-      throw _privateConstructorUsedError;
-  CameraPosition? get initialCameraPosition =>
-      throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
   String get location => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
@@ -44,10 +38,7 @@ abstract class $NewContractStateCopyWith<$Res> {
       _$NewContractStateCopyWithImpl<$Res, NewContractState>;
   @useResult
   $Res call(
-      {Completer<GoogleMapController>? completerController,
-      GoogleMapController? googleMapcontroller,
-      CameraPosition? initialCameraPosition,
-      String city,
+      {String city,
       String location,
       String phone,
       String value,
@@ -70,9 +61,6 @@ class _$NewContractStateCopyWithImpl<$Res, $Val extends NewContractState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? completerController = freezed,
-    Object? googleMapcontroller = freezed,
-    Object? initialCameraPosition = freezed,
     Object? city = null,
     Object? location = null,
     Object? phone = null,
@@ -83,18 +71,6 @@ class _$NewContractStateCopyWithImpl<$Res, $Val extends NewContractState>
     Object? galleryImages = null,
   }) {
     return _then(_value.copyWith(
-      completerController: freezed == completerController
-          ? _value.completerController
-          : completerController // ignore: cast_nullable_to_non_nullable
-              as Completer<GoogleMapController>?,
-      googleMapcontroller: freezed == googleMapcontroller
-          ? _value.googleMapcontroller
-          : googleMapcontroller // ignore: cast_nullable_to_non_nullable
-              as GoogleMapController?,
-      initialCameraPosition: freezed == initialCameraPosition
-          ? _value.initialCameraPosition
-          : initialCameraPosition // ignore: cast_nullable_to_non_nullable
-              as CameraPosition?,
       city: null == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
@@ -140,10 +116,7 @@ abstract class _$$NewContractStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Completer<GoogleMapController>? completerController,
-      GoogleMapController? googleMapcontroller,
-      CameraPosition? initialCameraPosition,
-      String city,
+      {String city,
       String location,
       String phone,
       String value,
@@ -164,9 +137,6 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? completerController = freezed,
-    Object? googleMapcontroller = freezed,
-    Object? initialCameraPosition = freezed,
     Object? city = null,
     Object? location = null,
     Object? phone = null,
@@ -177,18 +147,6 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
     Object? galleryImages = null,
   }) {
     return _then(_$NewContractStateImpl(
-      completerController: freezed == completerController
-          ? _value.completerController
-          : completerController // ignore: cast_nullable_to_non_nullable
-              as Completer<GoogleMapController>?,
-      googleMapcontroller: freezed == googleMapcontroller
-          ? _value.googleMapcontroller
-          : googleMapcontroller // ignore: cast_nullable_to_non_nullable
-              as GoogleMapController?,
-      initialCameraPosition: freezed == initialCameraPosition
-          ? _value.initialCameraPosition
-          : initialCameraPosition // ignore: cast_nullable_to_non_nullable
-              as CameraPosition?,
       city: null == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
@@ -229,10 +187,7 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
 
 class _$NewContractStateImpl extends _NewContractState {
   const _$NewContractStateImpl(
-      {this.completerController,
-      this.googleMapcontroller,
-      this.initialCameraPosition,
-      this.city = '',
+      {this.city = '',
       this.location = '',
       this.phone = '',
       this.value = '',
@@ -244,12 +199,6 @@ class _$NewContractStateImpl extends _NewContractState {
         _galleryImages = galleryImages,
         super._();
 
-  @override
-  final Completer<GoogleMapController>? completerController;
-  @override
-  final GoogleMapController? googleMapcontroller;
-  @override
-  final CameraPosition? initialCameraPosition;
   @override
   @JsonKey()
   final String city;
@@ -287,7 +236,7 @@ class _$NewContractStateImpl extends _NewContractState {
 
   @override
   String toString() {
-    return 'NewContractState(completerController: $completerController, googleMapcontroller: $googleMapcontroller, initialCameraPosition: $initialCameraPosition, city: $city, location: $location, phone: $phone, value: $value, services: $services, stepperContractController: $stepperContractController, nextDoneTxt: $nextDoneTxt, galleryImages: $galleryImages)';
+    return 'NewContractState(city: $city, location: $location, phone: $phone, value: $value, services: $services, stepperContractController: $stepperContractController, nextDoneTxt: $nextDoneTxt, galleryImages: $galleryImages)';
   }
 
   @override
@@ -295,12 +244,6 @@ class _$NewContractStateImpl extends _NewContractState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NewContractStateImpl &&
-            (identical(other.completerController, completerController) ||
-                other.completerController == completerController) &&
-            (identical(other.googleMapcontroller, googleMapcontroller) ||
-                other.googleMapcontroller == googleMapcontroller) &&
-            (identical(other.initialCameraPosition, initialCameraPosition) ||
-                other.initialCameraPosition == initialCameraPosition) &&
             (identical(other.city, city) || other.city == city) &&
             (identical(other.location, location) ||
                 other.location == location) &&
@@ -319,9 +262,6 @@ class _$NewContractStateImpl extends _NewContractState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      completerController,
-      googleMapcontroller,
-      initialCameraPosition,
       city,
       location,
       phone,
@@ -341,10 +281,7 @@ class _$NewContractStateImpl extends _NewContractState {
 
 abstract class _NewContractState extends NewContractState {
   const factory _NewContractState(
-      {final Completer<GoogleMapController>? completerController,
-      final GoogleMapController? googleMapcontroller,
-      final CameraPosition? initialCameraPosition,
-      final String city,
+      {final String city,
       final String location,
       final String phone,
       final String value,
@@ -354,12 +291,6 @@ abstract class _NewContractState extends NewContractState {
       final List<XFile> galleryImages}) = _$NewContractStateImpl;
   const _NewContractState._() : super._();
 
-  @override
-  Completer<GoogleMapController>? get completerController;
-  @override
-  GoogleMapController? get googleMapcontroller;
-  @override
-  CameraPosition? get initialCameraPosition;
   @override
   String get city;
   @override

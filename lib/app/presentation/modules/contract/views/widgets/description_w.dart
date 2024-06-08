@@ -1,8 +1,9 @@
-import 'package:digital_contract/app/presentation/global/extensions/widgets_ext.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/responsive/responsive.dart';
 import '../../../../../core/theme/theme_app_data.dart';
+
+import '../../../../global/extensions/widgets_ext.dart';
 
 class DescriptionW extends StatelessWidget {
   final Responsive responsive;

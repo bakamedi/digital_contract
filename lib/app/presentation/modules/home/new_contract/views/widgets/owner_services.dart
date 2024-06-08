@@ -18,31 +18,26 @@ class OwnerServices extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      shrinkWrap: true,
-      slivers: [
-        SliverToBoxAdapter(
-          child: InputTextField(
+    return SliverToBoxAdapter(
+      child: Column(
+        children: [
+          InputTextField(
             backgroundText: 'Ciudad',
             prefixIcon: const Icon(
               DigitalContractIcons.city_solid,
             ),
             onChanged: (value) {},
           ),
-        ),
-        SliverToBoxAdapter(
-          child: InputTextField(
+          InputTextField(
             backgroundText: 'Ubicación',
             prefixIcon: const Icon(
               DigitalContractIcons.map_location_dot_solid,
             ),
             onChanged: (value) {},
           ),
-        ),
-        const SliverToBoxAdapter(
-          child: MapsGW(),
-        ),
-      ],
+          MapsGW(),
+        ],
+      ),
     );
   }
 }

@@ -16,13 +16,15 @@ class PropertyStepperOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
+    return CustomScrollView(
+      shrinkWrap: true,
+      slivers: [
         OwnerServices(
           responsive: responsive,
           newContractController: newContractController,
         ),
         BasicServices(
+          responsive: responsive,
           newContractController: newContractController,
         ),
       ],

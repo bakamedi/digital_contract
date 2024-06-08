@@ -1,10 +1,9 @@
-import 'package:digital_contract/app/core/responsive/responsive.dart';
-import 'package:digital_contract/app/presentation/global/widgets/custom_text.dart';
-import 'package:digital_contract/app/presentation/router/routes/new_contract_route.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
+import '../../../core/responsive/responsive.dart';
 import '../../../core/theme/theme_app_data.dart';
+import '../controller/utils/init_maps.dart';
+import 'custom_text.dart';
 
 class BodyInsideApp extends StatelessWidget {
   final Widget body;
@@ -25,9 +24,7 @@ class BodyInsideApp extends StatelessWidget {
       body: body,
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: ThemeAppData.blackColor,
-        onPressed: () => context.pushNamed(
-          NewContractRoute.path,
-        ),
+        onPressed: () => initMaps(context),
         label: CustomText(
           'Nuevo',
           fontSize: responsive.dp(1.5),

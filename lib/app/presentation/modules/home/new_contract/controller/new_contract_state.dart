@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 
 part 'new_contract_state.freezed.dart';
@@ -8,12 +11,20 @@ part 'new_contract_state.freezed.dart';
 class NewContractState with _$NewContractState {
   const NewContractState._();
   const factory NewContractState({
+    Completer<GoogleMapController>? completerController,
+    GoogleMapController? googleMapcontroller,
+    CameraPosition? initialCameraPosition,
+    @Default('') String city,
+    @Default('') String location,
+    @Default('') String phone,
+    @Default('') String value,
     @Default([true, false, false]) List<bool> services,
     PageController? stepperContractController,
     @Default('Siguiente') String nextDoneTxt,
     @Default([]) List<XFile> galleryImages,
   }) = _NewContractState;
   static NewContractState get initialState => NewContractState(
+        completerController: Completer(),
         nextDoneTxt: 'Siguiente',
         stepperContractController: PageController(
           initialPage: 0,

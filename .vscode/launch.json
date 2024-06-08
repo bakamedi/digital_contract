@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "tfp-app-mobile",
+            "name": "digital-contract",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "tfp-app-mobile (profile mode)",
+            "name": "digital-contract (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "tfp-app-mobile (release mode)",
+            "name": "digital-contract (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

@@ -152,7 +152,7 @@ class ContractGW extends StatelessWidget {
               _textItem(
                 responsive,
                 text:
-                    'sin poder darle otro uso, salvo convenio posterior con la arrendadoro/a.',
+                    ' sin poder darle otro uso, salvo convenio posterior con la arrendadoro/a.',
               ),
               _textItem(
                 responsive,
@@ -191,7 +191,7 @@ class ContractGW extends StatelessWidget {
               _textItem(
                 responsive,
                 text:
-                    'En caso de ser renovado el contrato, y de así expresarlo el arrendatario (mínimo con tres meses de anticipación) se lo hará previo un reajuste del canon suscrito anteriormente. La renovación comprenderá el período de un año.',
+                    ' En caso de ser renovado el contrato, y de así expresarlo el arrendatario (mínimo con tres meses de anticipación) se lo hará previo un reajuste del canon suscrito anteriormente. La renovación comprenderá el período de un año.',
               ),
               _textItem(
                 responsive,

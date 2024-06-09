@@ -41,29 +41,35 @@ class NewContractView extends StatelessWidget {
                 newContractController: newContractController,
                 responsive: responsive,
               ),
-              ContractGW(
-                landLordName: newContractController.landLordName,
-                nuiLandLord: newContractController.landLordNui,
-                lesseeName: '',
-                nuiLessee: '',
-                address: newContractController.address,
-                rooms: newContractController.rooms,
-                bathRooms: newContractController.bathRooms,
-                city: newContractController.city,
-                province: newContractController.province,
-                waterPrice: newContractController.serviceWaterPrice,
-                electricityPrice: newContractController.serviceElectricityPrice,
-                internetPrice: newContractController.serviceInternetPrice,
-                payStartDateContract: CustomDateUtils.formatDate(
-                  DateTime.parse("2024-06-09 16:27:51.856"),
+              SingleChildScrollView(
+                padding: EdgeInsets.only(
+                  bottom: responsive.bhp(20),
                 ),
-                payEndDateContract: CustomDateUtils.formatDate(
-                  DateTime.parse("2024-06-09 16:27:51.856"),
+                child: ContractGW(
+                  landLordName: newContractController.landLordName,
+                  nuiLandLord: newContractController.landLordNui,
+                  lesseeName: 'NOMBRE_DEl_ARRENDADOR',
+                  nuiLessee: 'NUI_DEL_ARRENDADOR',
+                  address: newContractController.address,
+                  rooms: newContractController.rooms,
+                  bathRooms: newContractController.bathRooms,
+                  city: newContractController.city,
+                  province: newContractController.province,
+                  waterPrice: newContractController.serviceWaterPrice,
+                  electricityPrice:
+                      newContractController.serviceElectricityPrice,
+                  internetPrice: newContractController.serviceInternetPrice,
+                  payStartDateContract: CustomDateUtils.formatDate(
+                    DateTime.now(),
+                  ),
+                  payEndDateContract: CustomDateUtils.formatDate(
+                    DateTime.now(),
+                  ),
+                  endDateContract: CustomDateUtils.formatDate(
+                    DateTime.now(),
+                  ),
+                  propertyPrice: 200,
                 ),
-                endDateContract: CustomDateUtils.formatDate(
-                  DateTime.parse("2024-06-09 16:27:51.856"),
-                ),
-                propertyPrice: 200,
               ),
             ],
           ),

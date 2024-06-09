@@ -19,11 +19,26 @@ class MyApp extends StatelessWidget {
           routerConfig: routerProvider.read(),
           title: 'Digital Contracts',
           theme: ThemeAppData.lightTheme,
+          localizationsDelegates: _getLocalizationsDelegate(),
+          supportedLocales: _getSupportedLocales(),
         ),
         LoaderGW(
           responsive: responsive,
         ),
       ],
     );
+  }
+
+  Iterable<LocalizationsDelegate<dynamic>>? _getLocalizationsDelegate() {
+    return [
+      DefaultWidgetsLocalizations.delegate,
+    ];
+  }
+
+  Iterable<Locale> _getSupportedLocales() {
+    return [
+      const Locale('en'), // Inglés
+      const Locale('es'), // Español
+    ];
   }
 }

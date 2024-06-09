@@ -14,6 +14,41 @@ class DeviceUtilHelper {
     required FlutterSecureStorage secureStorage,
   }) : _secureStorage = secureStorage;
 
+  Future<String> get id async =>
+      await _secureStorage.read(
+        key: GlobalNameStorageKey.ID,
+      ) ??
+      '';
+
+  Future<String> get fullname async =>
+      await _secureStorage.read(
+        key: GlobalNameStorageKey.FULL_NAME,
+      ) ??
+      '';
+
+  Future<String> get nui async =>
+      await _secureStorage.read(
+        key: GlobalNameStorageKey.NUI,
+      ) ??
+      '';
+  Future<String> get email async =>
+      await _secureStorage.read(
+        key: GlobalNameStorageKey.EMAIL,
+      ) ??
+      '';
+
+  Future<String> get phone async =>
+      await _secureStorage.read(
+        key: GlobalNameStorageKey.PHONE,
+      ) ??
+      '';
+
+  Future<String> get userType async =>
+      await _secureStorage.read(
+        key: GlobalNameStorageKey.USER_TYPE,
+      ) ??
+      '';
+
   Future<String> get token async =>
       await _secureStorage.read(
         key: GlobalNameStorageKey.TOKEN,
@@ -82,8 +117,7 @@ class DeviceUtilHelper {
 
   Future<void> clearData() async {
     try {
-      await _secureStorage.delete(key: GlobalNameStorageKey.TOKEN);
-      await _secureStorage.delete(key: GlobalNameStorageKey.DEVICE_PATH);
+      await _secureStorage.deleteAll();
     } catch (e) {
       developer.log(e.toString());
     }

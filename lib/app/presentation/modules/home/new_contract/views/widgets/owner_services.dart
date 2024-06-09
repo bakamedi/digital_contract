@@ -34,6 +34,16 @@ class OwnerServices extends StatelessWidget {
           ),
           InputTextField(
             onChanged: (value) => newContractController.onChangeField(
+              UpdateFieldProperty.province,
+              value,
+            ),
+            backgroundText: 'Provincia',
+            prefixIcon: const Icon(
+              DigitalContractIcons.circle_question_regular,
+            ),
+          ),
+          InputTextField(
+            onChanged: (value) => newContractController.onChangeField(
               UpdateFieldProperty.address,
               value,
             ),

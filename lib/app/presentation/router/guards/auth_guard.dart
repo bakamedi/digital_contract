@@ -8,7 +8,7 @@ Future<String?> authGuard(
   BuildContext context,
   GoRouterState state,
 ) async {
-  final authenticatedUser = sessionProvider.read().state;
+  final authenticatedUser = sessionGlobalProvider.read().state;
   print(authenticatedUser);
   if (authenticatedUser == null) {
     final redirect = Uri.encodeComponent(state.uri.toString());

@@ -1,18 +1,34 @@
+import 'package:digital_contract/app/presentation/global/controller/session.dart';
+import 'package:digital_contract/app/presentation/modules/home/new_contract/controller/new_contract_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../router/routes/new_contract_route.dart';
+import '../loader/loader_gc.dart';
 import '../maps/maps.dart';
 
 Future<void> initMaps(BuildContext context) async {
   try {
-    final mapsController = mapsProvider.read();
+    final sessionGC = sessionGlobalProvider.read();
+    final loaderGC = loaderGlobalProvider.read();
+    final mapsController = mapsGlobalProvider.read();
+    final newContractController = newContractProvider.read();
+    loaderGC.showLoader(loading: true);
+    final landLordName = await sessionGC.fullName;
+    final nuiLandLord = await sessionGC.nui;
+    final phoneLandLord = await sessionGC.phone;
     final Position currentPosition = await _determinePosition();
     mapsController.initCameraPosition(
       currentPosition.latitude,
       currentPosition.longitude,
     );
+    newContractController.loadLandLordData(
+      landLordName,
+      nuiLandLord,
+      phoneLandLord,
+    );
+    loaderGC.showLoader(loading: false);
     context.pushNamed(
       NewContractRoute.path,
     );

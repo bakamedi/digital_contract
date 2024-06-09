@@ -10,12 +10,12 @@ import 'maps_state.dart';
 
 const double ZOOM = 13;
 
-final mapsProvider = Provider.state<MapsController, MapsState>(
-  (_) => MapsController(MapsState.initialState),
+final mapsGlobalProvider = Provider.state<MapsGlobalController, MapsState>(
+  (_) => MapsGlobalController(MapsState.initialState),
 );
 
-class MapsController extends StateNotifier<MapsState> {
-  MapsController(super.initialState) {
+class MapsGlobalController extends StateNotifier<MapsState> {
+  MapsGlobalController(super.initialState) {
     onlyUpdate(
       state = state.copyWith(
         completerController: Completer(),

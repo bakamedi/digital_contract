@@ -3,6 +3,7 @@ enum UpdateFieldProperty {
   serviceElectricityPrice,
   serviceInternetPrice,
   city,
+  province,
   address,
   latLng,
 }

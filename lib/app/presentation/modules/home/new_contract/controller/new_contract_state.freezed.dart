@@ -16,13 +16,17 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NewContractState {
+// user
+  String get landLordName => throw _privateConstructorUsedError;
+  String get nuiLandLord => throw _privateConstructorUsedError;
+  String get phone => throw _privateConstructorUsedError; // property
   String get city => throw _privateConstructorUsedError;
   int get rooms => throw _privateConstructorUsedError;
   int get bathRooms => throw _privateConstructorUsedError;
   double get lat => throw _privateConstructorUsedError;
   double get lng => throw _privateConstructorUsedError;
-  String get phone => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
+  String get province => throw _privateConstructorUsedError;
   String get serviceWaterPrice => throw _privateConstructorUsedError;
   String get serviceElectricityPrice => throw _privateConstructorUsedError;
   String get serviceInternetPrice => throw _privateConstructorUsedError;
@@ -44,13 +48,16 @@ abstract class $NewContractStateCopyWith<$Res> {
       _$NewContractStateCopyWithImpl<$Res, NewContractState>;
   @useResult
   $Res call(
-      {String city,
+      {String landLordName,
+      String nuiLandLord,
+      String phone,
+      String city,
       int rooms,
       int bathRooms,
       double lat,
       double lng,
-      String phone,
       String address,
+      String province,
       String serviceWaterPrice,
       String serviceElectricityPrice,
       String serviceInternetPrice,
@@ -73,13 +80,16 @@ class _$NewContractStateCopyWithImpl<$Res, $Val extends NewContractState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? landLordName = null,
+    Object? nuiLandLord = null,
+    Object? phone = null,
     Object? city = null,
     Object? rooms = null,
     Object? bathRooms = null,
     Object? lat = null,
     Object? lng = null,
-    Object? phone = null,
     Object? address = null,
+    Object? province = null,
     Object? serviceWaterPrice = null,
     Object? serviceElectricityPrice = null,
     Object? serviceInternetPrice = null,
@@ -89,6 +99,18 @@ class _$NewContractStateCopyWithImpl<$Res, $Val extends NewContractState>
     Object? galleryImages = null,
   }) {
     return _then(_value.copyWith(
+      landLordName: null == landLordName
+          ? _value.landLordName
+          : landLordName // ignore: cast_nullable_to_non_nullable
+              as String,
+      nuiLandLord: null == nuiLandLord
+          ? _value.nuiLandLord
+          : nuiLandLord // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
       city: null == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
@@ -109,13 +131,13 @@ class _$NewContractStateCopyWithImpl<$Res, $Val extends NewContractState>
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
               as double,
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String,
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      province: null == province
+          ? _value.province
+          : province // ignore: cast_nullable_to_non_nullable
               as String,
       serviceWaterPrice: null == serviceWaterPrice
           ? _value.serviceWaterPrice
@@ -158,13 +180,16 @@ abstract class _$$NewContractStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String city,
+      {String landLordName,
+      String nuiLandLord,
+      String phone,
+      String city,
       int rooms,
       int bathRooms,
       double lat,
       double lng,
-      String phone,
       String address,
+      String province,
       String serviceWaterPrice,
       String serviceElectricityPrice,
       String serviceInternetPrice,
@@ -185,13 +210,16 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? landLordName = null,
+    Object? nuiLandLord = null,
+    Object? phone = null,
     Object? city = null,
     Object? rooms = null,
     Object? bathRooms = null,
     Object? lat = null,
     Object? lng = null,
-    Object? phone = null,
     Object? address = null,
+    Object? province = null,
     Object? serviceWaterPrice = null,
     Object? serviceElectricityPrice = null,
     Object? serviceInternetPrice = null,
@@ -201,6 +229,18 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
     Object? galleryImages = null,
   }) {
     return _then(_$NewContractStateImpl(
+      landLordName: null == landLordName
+          ? _value.landLordName
+          : landLordName // ignore: cast_nullable_to_non_nullable
+              as String,
+      nuiLandLord: null == nuiLandLord
+          ? _value.nuiLandLord
+          : nuiLandLord // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
       city: null == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
@@ -221,13 +261,13 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
               as double,
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String,
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      province: null == province
+          ? _value.province
+          : province // ignore: cast_nullable_to_non_nullable
               as String,
       serviceWaterPrice: null == serviceWaterPrice
           ? _value.serviceWaterPrice
@@ -265,13 +305,16 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
 
 class _$NewContractStateImpl extends _NewContractState {
   const _$NewContractStateImpl(
-      {this.city = '',
+      {this.landLordName = '',
+      this.nuiLandLord = '',
+      this.phone = '',
+      this.city = '',
       this.rooms = 0,
       this.bathRooms = 0,
       this.lat = 0.0,
       this.lng = 0.0,
-      this.phone = '',
       this.address = '',
+      this.province = '',
       this.serviceWaterPrice = '',
       this.serviceElectricityPrice = '',
       this.serviceInternetPrice = '',
@@ -283,6 +326,17 @@ class _$NewContractStateImpl extends _NewContractState {
         _galleryImages = galleryImages,
         super._();
 
+// user
+  @override
+  @JsonKey()
+  final String landLordName;
+  @override
+  @JsonKey()
+  final String nuiLandLord;
+  @override
+  @JsonKey()
+  final String phone;
+// property
   @override
   @JsonKey()
   final String city;
@@ -300,10 +354,10 @@ class _$NewContractStateImpl extends _NewContractState {
   final double lng;
   @override
   @JsonKey()
-  final String phone;
+  final String address;
   @override
   @JsonKey()
-  final String address;
+  final String province;
   @override
   @JsonKey()
   final String serviceWaterPrice;
@@ -338,7 +392,7 @@ class _$NewContractStateImpl extends _NewContractState {
 
   @override
   String toString() {
-    return 'NewContractState(city: $city, rooms: $rooms, bathRooms: $bathRooms, lat: $lat, lng: $lng, phone: $phone, address: $address, serviceWaterPrice: $serviceWaterPrice, serviceElectricityPrice: $serviceElectricityPrice, serviceInternetPrice: $serviceInternetPrice, services: $services, stepperContractController: $stepperContractController, nextDoneTxt: $nextDoneTxt, galleryImages: $galleryImages)';
+    return 'NewContractState(landLordName: $landLordName, nuiLandLord: $nuiLandLord, phone: $phone, city: $city, rooms: $rooms, bathRooms: $bathRooms, lat: $lat, lng: $lng, address: $address, province: $province, serviceWaterPrice: $serviceWaterPrice, serviceElectricityPrice: $serviceElectricityPrice, serviceInternetPrice: $serviceInternetPrice, services: $services, stepperContractController: $stepperContractController, nextDoneTxt: $nextDoneTxt, galleryImages: $galleryImages)';
   }
 
   @override
@@ -346,14 +400,20 @@ class _$NewContractStateImpl extends _NewContractState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NewContractStateImpl &&
+            (identical(other.landLordName, landLordName) ||
+                other.landLordName == landLordName) &&
+            (identical(other.nuiLandLord, nuiLandLord) ||
+                other.nuiLandLord == nuiLandLord) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.city, city) || other.city == city) &&
             (identical(other.rooms, rooms) || other.rooms == rooms) &&
             (identical(other.bathRooms, bathRooms) ||
                 other.bathRooms == bathRooms) &&
             (identical(other.lat, lat) || other.lat == lat) &&
             (identical(other.lng, lng) || other.lng == lng) &&
-            (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.address, address) || other.address == address) &&
+            (identical(other.province, province) ||
+                other.province == province) &&
             (identical(other.serviceWaterPrice, serviceWaterPrice) ||
                 other.serviceWaterPrice == serviceWaterPrice) &&
             (identical(
@@ -374,13 +434,16 @@ class _$NewContractStateImpl extends _NewContractState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      landLordName,
+      nuiLandLord,
+      phone,
       city,
       rooms,
       bathRooms,
       lat,
       lng,
-      phone,
       address,
+      province,
       serviceWaterPrice,
       serviceElectricityPrice,
       serviceInternetPrice,
@@ -399,13 +462,16 @@ class _$NewContractStateImpl extends _NewContractState {
 
 abstract class _NewContractState extends NewContractState {
   const factory _NewContractState(
-      {final String city,
+      {final String landLordName,
+      final String nuiLandLord,
+      final String phone,
+      final String city,
       final int rooms,
       final int bathRooms,
       final double lat,
       final double lng,
-      final String phone,
       final String address,
+      final String province,
       final String serviceWaterPrice,
       final String serviceElectricityPrice,
       final String serviceInternetPrice,
@@ -415,7 +481,13 @@ abstract class _NewContractState extends NewContractState {
       final List<XFile> galleryImages}) = _$NewContractStateImpl;
   const _NewContractState._() : super._();
 
+  @override // user
+  String get landLordName;
   @override
+  String get nuiLandLord;
+  @override
+  String get phone;
+  @override // property
   String get city;
   @override
   int get rooms;
@@ -426,9 +498,9 @@ abstract class _NewContractState extends NewContractState {
   @override
   double get lng;
   @override
-  String get phone;
-  @override
   String get address;
+  @override
+  String get province;
   @override
   String get serviceWaterPrice;
   @override

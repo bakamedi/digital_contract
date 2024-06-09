@@ -94,4 +94,25 @@ class AuthRepositoryImpl implements AuthRepository {
     // TODO: implement validateOtp
     throw UnimplementedError();
   }
+
+  @override
+  Future<String> get email async => await _deviceUtilHelper.email;
+
+  @override
+  Future<String> get fullName async => await _deviceUtilHelper.fullname;
+
+  @override
+  Future<String> get id async => await _deviceUtilHelper.id;
+
+  @override
+  Future<String> get nui async => await _deviceUtilHelper.nui;
+
+  @override
+  Future<String> get phone async => await _deviceUtilHelper.phone;
+
+  @override
+  Future<String> get token async => await _deviceUtilHelper.token;
+
+  @override
+  Future<String> get userType async => await _deviceUtilHelper.userType;
 }

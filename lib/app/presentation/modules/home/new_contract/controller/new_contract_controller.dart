@@ -22,6 +22,19 @@ class NewContractController extends StateNotifier<NewContractState> {
   String get nextDoneTxt => state.nextDoneTxt;
   List<bool> get services => state.services;
 
+  void loadLandLordData(
+    String landLordName,
+    String nuiLandLord,
+    String phoneLandLord,
+  ) {
+    onlyUpdate(
+      state = state.copyWith(
+        landLordName: landLordName,
+        nuiLandLord: nuiLandLord,
+      ),
+    );
+  }
+
   void changeServiceValue(ServiceType serviceType) {
     List<bool> servicesTmp = List<bool>.from(services);
     servicesTmp[serviceType.index] = !servicesTmp[serviceType.index];
@@ -117,6 +130,13 @@ class NewContractController extends StateNotifier<NewContractState> {
           state = state.copyWith(
             lat: latLng.latitude,
             lng: latLng.longitude,
+          ),
+        );
+        break;
+      case UpdateFieldProperty.province:
+        onlyUpdate(
+          state = state.copyWith(
+            province: value ?? '',
           ),
         );
         break;

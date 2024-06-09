@@ -21,15 +21,15 @@ class MapsGW extends StatelessWidget {
 
     return Consumer(
       builder: (_, ref, __) {
-        final mapsController = ref.watch(mapsProvider);
+        final mapsGlobalController = ref.watch(mapsGlobalProvider);
         return Container(
           margin: const EdgeInsets.symmetric(horizontal: 20),
           width: responsive.width,
           height: responsive.height / 3,
           child: GoogleMap(
-            markers: mapsController.makers,
-            initialCameraPosition: mapsController.initialCameraPosition!,
-            onMapCreated: mapsController.createMapController,
+            markers: mapsGlobalController.makers,
+            initialCameraPosition: mapsGlobalController.initialCameraPosition!,
+            onMapCreated: mapsGlobalController.createMapController,
             myLocationEnabled: true,
             gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{
               Factory<OneSequenceGestureRecognizer>(
@@ -41,7 +41,7 @@ class MapsGW extends StatelessWidget {
             mapToolbarEnabled: false,
             compassEnabled: false,
             onTap: (position) {
-              mapsController.onTap(
+              mapsGlobalController.onTap(
                 position,
               );
               try {

@@ -18,7 +18,10 @@ class DeviceUtilsRepositoryImpl implements DeviceUtilsRepository {
   }) : _deviceUtilHelper = deviceUtilHelper;
 
   @override
-  Future<void> saveImage(ByteData byteData, String fileName) async {
+  Future<void> saveImage(
+    ByteData byteData,
+    String fileName,
+  ) async {
     try {
       final platformDir = Platform.isAndroid
           ? await getTemporaryDirectory()

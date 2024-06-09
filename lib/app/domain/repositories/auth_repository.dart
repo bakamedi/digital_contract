@@ -22,4 +22,12 @@ abstract class AuthRepository {
   FutureEither<SignInFailure, String> validateOtp(
     String otp,
   );
+
+  Future<String> get id;
+  Future<String> get fullName;
+  Future<String> get nui;
+  Future<String> get email;
+  Future<String> get phone;
+  Future<String> get userType;
+  Future<String> get token;
 }

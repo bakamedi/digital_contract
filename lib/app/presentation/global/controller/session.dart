@@ -6,16 +6,17 @@ import '../../../dependency_injection.dart.dart';
 import '../../../domain/models/user_model.dart';
 import '../../../domain/repositories/auth_repository.dart';
 
-final sessionProvider = StateNotifierProvider<SessionController, UserModel?>(
-  (ref) => SessionController(
+final sessionGlobalProvider =
+    StateNotifierProvider<SessionGlobalController, UserModel?>(
+  (ref) => SessionGlobalController(
     null,
     authRepository: Repositories.auth.read(),
   ),
   autoDispose: false,
 );
 
-class SessionController extends StateNotifier<UserModel?> {
-  SessionController(
+class SessionGlobalController extends StateNotifier<UserModel?> {
+  SessionGlobalController(
     super.initialState, {
     required AuthRepository authRepository,
   }) : _authRepository = authRepository;
@@ -34,6 +35,14 @@ class SessionController extends StateNotifier<UserModel?> {
       case Left _:
     }
   }
+
+  Future<String> get id async => await _authRepository.id;
+  Future<String> get fullName async => await _authRepository.fullName;
+  Future<String> get nui async => await _authRepository.nui;
+  Future<String> get email async => await _authRepository.email;
+  Future<String> get phone async => await _authRepository.phone;
+  Future<String> get userType async => await _authRepository.userType;
+  Future<String> get token async => await _authRepository.token;
 
   void logOut() {
     state = null;

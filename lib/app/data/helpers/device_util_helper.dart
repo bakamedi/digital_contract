@@ -38,15 +38,31 @@ class DeviceUtilHelper {
   Future<void> saveUserData(TokenModel token) async {
     await _secureStorage.write(
       key: GlobalNameStorageKey.ID,
-      value: token.data.id,
+      value: token.id,
+    );
+    await _secureStorage.write(
+      key: GlobalNameStorageKey.FULL_NAME,
+      value: token.fullname,
+    );
+    await _secureStorage.write(
+      key: GlobalNameStorageKey.NUI,
+      value: token.nui,
     );
     await _secureStorage.write(
       key: GlobalNameStorageKey.EMAIL,
-      value: token.data.email,
+      value: token.email,
+    );
+    await _secureStorage.write(
+      key: GlobalNameStorageKey.PHONE,
+      value: token.phone,
+    );
+    await _secureStorage.write(
+      key: GlobalNameStorageKey.USER_TYPE,
+      value: token.userType,
     );
     await _secureStorage.write(
       key: GlobalNameStorageKey.TOKEN,
-      value: token.data.token,
+      value: token.token,
     );
   }
 

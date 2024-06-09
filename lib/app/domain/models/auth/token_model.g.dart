@@ -8,23 +8,22 @@ part of 'token_model.dart';
 
 _$TokenModelImpl _$$TokenModelImplFromJson(Map<String, dynamic> json) =>
     _$TokenModelImpl(
-      data: Data.fromJson(json['data'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      fullname: json['fullname'] as String?,
+      nui: json['nui'] as String?,
+      email: json['email'] as String?,
+      phone: json['phone'] as String?,
+      userType: json['userType'] as String?,
+      token: json['token'] as String?,
     );
 
 Map<String, dynamic> _$$TokenModelImplToJson(_$TokenModelImpl instance) =>
     <String, dynamic>{
-      'data': instance.data,
-    };
-
-_$DataImpl _$$DataImplFromJson(Map<String, dynamic> json) => _$DataImpl(
-      id: json['id'] as String,
-      email: json['email'] as String,
-      token: json['token'] as String,
-    );
-
-Map<String, dynamic> _$$DataImplToJson(_$DataImpl instance) =>
-    <String, dynamic>{
       'id': instance.id,
+      'fullname': instance.fullname,
+      'nui': instance.nui,
       'email': instance.email,
+      'phone': instance.phone,
+      'userType': instance.userType,
       'token': instance.token,
     };

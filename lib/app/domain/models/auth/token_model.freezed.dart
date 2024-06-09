@@ -20,7 +20,13 @@ TokenModel _$TokenModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TokenModel {
-  Data get data => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get fullname => throw _privateConstructorUsedError;
+  String? get nui => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
+  String? get phone => throw _privateConstructorUsedError;
+  String? get userType => throw _privateConstructorUsedError;
+  String? get token => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,9 +40,14 @@ abstract class $TokenModelCopyWith<$Res> {
           TokenModel value, $Res Function(TokenModel) then) =
       _$TokenModelCopyWithImpl<$Res, TokenModel>;
   @useResult
-  $Res call({Data data});
-
-  $DataCopyWith<$Res> get data;
+  $Res call(
+      {String? id,
+      String? fullname,
+      String? nui,
+      String? email,
+      String? phone,
+      String? userType,
+      String? token});
 }
 
 /// @nodoc
@@ -52,22 +63,44 @@ class _$TokenModelCopyWithImpl<$Res, $Val extends TokenModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? id = freezed,
+    Object? fullname = freezed,
+    Object? nui = freezed,
+    Object? email = freezed,
+    Object? phone = freezed,
+    Object? userType = freezed,
+    Object? token = freezed,
   }) {
     return _then(_value.copyWith(
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as Data,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fullname: freezed == fullname
+          ? _value.fullname
+          : fullname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nui: freezed == nui
+          ? _value.nui
+          : nui // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userType: freezed == userType
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      token: freezed == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $DataCopyWith<$Res> get data {
-    return $DataCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value) as $Val);
-    });
   }
 }
 
@@ -79,10 +112,14 @@ abstract class _$$TokenModelImplCopyWith<$Res>
       __$$TokenModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Data data});
-
-  @override
-  $DataCopyWith<$Res> get data;
+  $Res call(
+      {String? id,
+      String? fullname,
+      String? nui,
+      String? email,
+      String? phone,
+      String? userType,
+      String? token});
 }
 
 /// @nodoc
@@ -96,13 +133,43 @@ class __$$TokenModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? id = freezed,
+    Object? fullname = freezed,
+    Object? nui = freezed,
+    Object? email = freezed,
+    Object? phone = freezed,
+    Object? userType = freezed,
+    Object? token = freezed,
   }) {
     return _then(_$TokenModelImpl(
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as Data,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fullname: freezed == fullname
+          ? _value.fullname
+          : fullname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nui: freezed == nui
+          ? _value.nui
+          : nui // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userType: freezed == userType
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      token: freezed == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -110,17 +177,36 @@ class __$$TokenModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TokenModelImpl implements _TokenModel {
-  const _$TokenModelImpl({required this.data});
+  const _$TokenModelImpl(
+      {this.id,
+      this.fullname,
+      this.nui,
+      this.email,
+      this.phone,
+      this.userType,
+      this.token});
 
   factory _$TokenModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$TokenModelImplFromJson(json);
 
   @override
-  final Data data;
+  final String? id;
+  @override
+  final String? fullname;
+  @override
+  final String? nui;
+  @override
+  final String? email;
+  @override
+  final String? phone;
+  @override
+  final String? userType;
+  @override
+  final String? token;
 
   @override
   String toString() {
-    return 'TokenModel(data: $data)';
+    return 'TokenModel(id: $id, fullname: $fullname, nui: $nui, email: $email, phone: $phone, userType: $userType, token: $token)';
   }
 
   @override
@@ -128,12 +214,21 @@ class _$TokenModelImpl implements _TokenModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TokenModelImpl &&
-            (identical(other.data, data) || other.data == data));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.fullname, fullname) ||
+                other.fullname == fullname) &&
+            (identical(other.nui, nui) || other.nui == nui) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.userType, userType) ||
+                other.userType == userType) &&
+            (identical(other.token, token) || other.token == token));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, data);
+  int get hashCode => Object.hash(
+      runtimeType, id, fullname, nui, email, phone, userType, token);
 
   @JsonKey(ignore: true)
   @override
@@ -150,182 +245,34 @@ class _$TokenModelImpl implements _TokenModel {
 }
 
 abstract class _TokenModel implements TokenModel {
-  const factory _TokenModel({required final Data data}) = _$TokenModelImpl;
+  const factory _TokenModel(
+      {final String? id,
+      final String? fullname,
+      final String? nui,
+      final String? email,
+      final String? phone,
+      final String? userType,
+      final String? token}) = _$TokenModelImpl;
 
   factory _TokenModel.fromJson(Map<String, dynamic> json) =
       _$TokenModelImpl.fromJson;
 
   @override
-  Data get data;
+  String? get id;
+  @override
+  String? get fullname;
+  @override
+  String? get nui;
+  @override
+  String? get email;
+  @override
+  String? get phone;
+  @override
+  String? get userType;
+  @override
+  String? get token;
   @override
   @JsonKey(ignore: true)
   _$$TokenModelImplCopyWith<_$TokenModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Data _$DataFromJson(Map<String, dynamic> json) {
-  return _Data.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Data {
-  String get id => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  String get token => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $DataCopyWith<Data> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DataCopyWith<$Res> {
-  factory $DataCopyWith(Data value, $Res Function(Data) then) =
-      _$DataCopyWithImpl<$Res, Data>;
-  @useResult
-  $Res call({String id, String email, String token});
-}
-
-/// @nodoc
-class _$DataCopyWithImpl<$Res, $Val extends Data>
-    implements $DataCopyWith<$Res> {
-  _$DataCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? email = null,
-    Object? token = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$DataImplCopyWith<$Res> implements $DataCopyWith<$Res> {
-  factory _$$DataImplCopyWith(
-          _$DataImpl value, $Res Function(_$DataImpl) then) =
-      __$$DataImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String id, String email, String token});
-}
-
-/// @nodoc
-class __$$DataImplCopyWithImpl<$Res>
-    extends _$DataCopyWithImpl<$Res, _$DataImpl>
-    implements _$$DataImplCopyWith<$Res> {
-  __$$DataImplCopyWithImpl(_$DataImpl _value, $Res Function(_$DataImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? email = null,
-    Object? token = null,
-  }) {
-    return _then(_$DataImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$DataImpl implements _Data {
-  const _$DataImpl(
-      {required this.id, required this.email, required this.token});
-
-  factory _$DataImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DataImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String email;
-  @override
-  final String token;
-
-  @override
-  String toString() {
-    return 'Data(id: $id, email: $email, token: $token)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DataImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.token, token) || other.token == token));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, email, token);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DataImplCopyWith<_$DataImpl> get copyWith =>
-      __$$DataImplCopyWithImpl<_$DataImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DataImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Data implements Data {
-  const factory _Data(
-      {required final String id,
-      required final String email,
-      required final String token}) = _$DataImpl;
-
-  factory _Data.fromJson(Map<String, dynamic> json) = _$DataImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get email;
-  @override
-  String get token;
-  @override
-  @JsonKey(ignore: true)
-  _$$DataImplCopyWith<_$DataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

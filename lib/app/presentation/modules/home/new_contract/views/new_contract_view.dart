@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_meedu/consumer.dart';
 
 import '../../../../../core/responsive/responsive.dart';
+import '../../../../global/utils/date_utils.dart';
 import '../../../../global/widgets/app_bar.dart';
 import '../../../../global/widgets/buttons/primary_btn.dart';
+import '../../../../global/widgets/contract_gw.dart';
 import '../controller/new_contract_controller.dart';
 import '../../../../global/extensions/widgets_ext.dart';
 import 'widgets/stepper/property_images_two.dart';
@@ -38,6 +40,30 @@ class NewContractView extends StatelessWidget {
               PropertyImagesTwo(
                 newContractController: newContractController,
                 responsive: responsive,
+              ),
+              ContractGW(
+                landLordName: newContractController.landLordName,
+                nuiLandLord: newContractController.landLordNui,
+                lesseeName: '',
+                nuiLessee: '',
+                address: newContractController.address,
+                rooms: newContractController.rooms,
+                bathRooms: newContractController.bathRooms,
+                city: newContractController.city,
+                province: newContractController.province,
+                waterPrice: newContractController.serviceWaterPrice,
+                electricityPrice: newContractController.serviceElectricityPrice,
+                internetPrice: newContractController.serviceInternetPrice,
+                payStartDateContract: CustomDateUtils.formatDate(
+                  DateTime.parse("2024-06-09 16:27:51.856"),
+                ),
+                payEndDateContract: CustomDateUtils.formatDate(
+                  DateTime.parse("2024-06-09 16:27:51.856"),
+                ),
+                endDateContract: CustomDateUtils.formatDate(
+                  DateTime.parse("2024-06-09 16:27:51.856"),
+                ),
+                propertyPrice: 200,
               ),
             ],
           ),

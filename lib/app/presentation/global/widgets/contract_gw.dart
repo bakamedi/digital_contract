@@ -7,11 +7,11 @@ import '../../global/extensions/widgets_ext.dart';
 
 class ContractGW extends StatelessWidget {
   final String landLordName;
-  final String idLandLord;
+  final String nuiLandLord;
   final String lesseeName;
-  final String idLessee;
-  final double rooms;
-  final double bathRooms;
+  final String nuiLessee;
+  final int rooms;
+  final int bathRooms;
   final String city;
   final String province;
   final String address;
@@ -19,28 +19,28 @@ class ContractGW extends StatelessWidget {
   final double electricityPrice;
   final double internetPrice;
   final double propertyPrice;
-  final String payStarDateContract;
+  final String payStartDateContract;
   final String payEndDateContract;
   final String endDateContract;
 
   const ContractGW({
     super.key,
     required this.landLordName,
-    required this.idLandLord,
+    required this.lesseeName,
     required this.rooms,
     required this.bathRooms,
     required this.city,
     required this.province,
+    required this.address,
     required this.waterPrice,
     required this.electricityPrice,
     required this.internetPrice,
     required this.propertyPrice,
-    required this.endDateContract,
-    required this.lesseeName,
-    required this.idLessee,
-    required this.address,
-    required this.payStarDateContract,
+    required this.payStartDateContract,
     required this.payEndDateContract,
+    required this.endDateContract,
+    required this.nuiLandLord,
+    required this.nuiLessee,
   });
 
   @override
@@ -78,7 +78,7 @@ class ContractGW extends StatelessWidget {
               ),
               _textItem(
                 responsive,
-                text: idLandLord,
+                text: nuiLandLord,
                 isBold: true,
               ),
               _textItem(
@@ -97,7 +97,7 @@ class ContractGW extends StatelessWidget {
               ),
               _textItem(
                 responsive,
-                text: idLessee,
+                text: nuiLessee,
                 isBold: true,
               ),
               _textItem(
@@ -176,7 +176,7 @@ class ContractGW extends StatelessWidget {
               ),
               _textItem(
                 responsive,
-                text: payStarDateContract,
+                text: payStartDateContract,
                 isBold: true,
               ),
               _textItem(

@@ -10,8 +10,8 @@ class NewContractState with _$NewContractState {
   const factory NewContractState({
     // user
     @Default('') String landLordName,
-    @Default('') String nuiLandLord,
-    @Default('') String phone,
+    @Default('') String landLordNui,
+    @Default('') String landLordPhone,
     // property
     @Default('') String city,
     @Default(0) int rooms,

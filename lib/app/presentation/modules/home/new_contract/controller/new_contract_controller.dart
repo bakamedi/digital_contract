@@ -4,6 +4,7 @@ import 'package:flutter_meedu/providers.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../../global/utils/money_currency.dart';
 import '../utils/service.enum.dart';
 import '../utils/update_field_property.dart';
 import 'new_contract_state.dart';
@@ -21,16 +22,36 @@ class NewContractController extends StateNotifier<NewContractState> {
   List<XFile> get gallery => state.galleryImages;
   String get nextDoneTxt => state.nextDoneTxt;
   List<bool> get services => state.services;
+  String get landLordName => state.landLordName;
+  String get landLordNui => state.landLordNui;
+  String get landLordPhone => state.landLordPhone;
+  String get city => state.city;
+  int get rooms => state.rooms;
+  int get bathRooms => state.bathRooms;
+  double get lat => state.lat;
+  double get lng => state.lng;
+  String get address => state.address;
+  String get province => state.province;
+  double get serviceWaterPrice => CurrencyMoneyUtil.formatAmountDouble(
+        state.serviceWaterPrice,
+      );
+  double get serviceElectricityPrice => CurrencyMoneyUtil.formatAmountDouble(
+        state.serviceElectricityPrice,
+      );
+  double get serviceInternetPrice => CurrencyMoneyUtil.formatAmountDouble(
+        state.serviceInternetPrice,
+      );
 
   void loadLandLordData(
     String landLordName,
-    String nuiLandLord,
-    String phoneLandLord,
+    String landLordNui,
+    String landLordPhone,
   ) {
     onlyUpdate(
       state = state.copyWith(
         landLordName: landLordName,
-        nuiLandLord: nuiLandLord,
+        landLordNui: landLordNui,
+        landLordPhone: landLordPhone,
       ),
     );
   }

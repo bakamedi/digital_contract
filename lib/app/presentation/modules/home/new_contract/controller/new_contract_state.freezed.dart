@@ -18,8 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$NewContractState {
 // user
   String get landLordName => throw _privateConstructorUsedError;
-  String get nuiLandLord => throw _privateConstructorUsedError;
-  String get phone => throw _privateConstructorUsedError; // property
+  String get landLordNui => throw _privateConstructorUsedError;
+  String get landLordPhone => throw _privateConstructorUsedError; // property
   String get city => throw _privateConstructorUsedError;
   int get rooms => throw _privateConstructorUsedError;
   int get bathRooms => throw _privateConstructorUsedError;
@@ -49,8 +49,8 @@ abstract class $NewContractStateCopyWith<$Res> {
   @useResult
   $Res call(
       {String landLordName,
-      String nuiLandLord,
-      String phone,
+      String landLordNui,
+      String landLordPhone,
       String city,
       int rooms,
       int bathRooms,
@@ -81,8 +81,8 @@ class _$NewContractStateCopyWithImpl<$Res, $Val extends NewContractState>
   @override
   $Res call({
     Object? landLordName = null,
-    Object? nuiLandLord = null,
-    Object? phone = null,
+    Object? landLordNui = null,
+    Object? landLordPhone = null,
     Object? city = null,
     Object? rooms = null,
     Object? bathRooms = null,
@@ -103,13 +103,13 @@ class _$NewContractStateCopyWithImpl<$Res, $Val extends NewContractState>
           ? _value.landLordName
           : landLordName // ignore: cast_nullable_to_non_nullable
               as String,
-      nuiLandLord: null == nuiLandLord
-          ? _value.nuiLandLord
-          : nuiLandLord // ignore: cast_nullable_to_non_nullable
+      landLordNui: null == landLordNui
+          ? _value.landLordNui
+          : landLordNui // ignore: cast_nullable_to_non_nullable
               as String,
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
+      landLordPhone: null == landLordPhone
+          ? _value.landLordPhone
+          : landLordPhone // ignore: cast_nullable_to_non_nullable
               as String,
       city: null == city
           ? _value.city
@@ -181,8 +181,8 @@ abstract class _$$NewContractStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {String landLordName,
-      String nuiLandLord,
-      String phone,
+      String landLordNui,
+      String landLordPhone,
       String city,
       int rooms,
       int bathRooms,
@@ -211,8 +211,8 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? landLordName = null,
-    Object? nuiLandLord = null,
-    Object? phone = null,
+    Object? landLordNui = null,
+    Object? landLordPhone = null,
     Object? city = null,
     Object? rooms = null,
     Object? bathRooms = null,
@@ -233,13 +233,13 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
           ? _value.landLordName
           : landLordName // ignore: cast_nullable_to_non_nullable
               as String,
-      nuiLandLord: null == nuiLandLord
-          ? _value.nuiLandLord
-          : nuiLandLord // ignore: cast_nullable_to_non_nullable
+      landLordNui: null == landLordNui
+          ? _value.landLordNui
+          : landLordNui // ignore: cast_nullable_to_non_nullable
               as String,
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
+      landLordPhone: null == landLordPhone
+          ? _value.landLordPhone
+          : landLordPhone // ignore: cast_nullable_to_non_nullable
               as String,
       city: null == city
           ? _value.city
@@ -306,8 +306,8 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
 class _$NewContractStateImpl extends _NewContractState {
   const _$NewContractStateImpl(
       {this.landLordName = '',
-      this.nuiLandLord = '',
-      this.phone = '',
+      this.landLordNui = '',
+      this.landLordPhone = '',
       this.city = '',
       this.rooms = 0,
       this.bathRooms = 0,
@@ -332,10 +332,10 @@ class _$NewContractStateImpl extends _NewContractState {
   final String landLordName;
   @override
   @JsonKey()
-  final String nuiLandLord;
+  final String landLordNui;
   @override
   @JsonKey()
-  final String phone;
+  final String landLordPhone;
 // property
   @override
   @JsonKey()
@@ -392,7 +392,7 @@ class _$NewContractStateImpl extends _NewContractState {
 
   @override
   String toString() {
-    return 'NewContractState(landLordName: $landLordName, nuiLandLord: $nuiLandLord, phone: $phone, city: $city, rooms: $rooms, bathRooms: $bathRooms, lat: $lat, lng: $lng, address: $address, province: $province, serviceWaterPrice: $serviceWaterPrice, serviceElectricityPrice: $serviceElectricityPrice, serviceInternetPrice: $serviceInternetPrice, services: $services, stepperContractController: $stepperContractController, nextDoneTxt: $nextDoneTxt, galleryImages: $galleryImages)';
+    return 'NewContractState(landLordName: $landLordName, landLordNui: $landLordNui, landLordPhone: $landLordPhone, city: $city, rooms: $rooms, bathRooms: $bathRooms, lat: $lat, lng: $lng, address: $address, province: $province, serviceWaterPrice: $serviceWaterPrice, serviceElectricityPrice: $serviceElectricityPrice, serviceInternetPrice: $serviceInternetPrice, services: $services, stepperContractController: $stepperContractController, nextDoneTxt: $nextDoneTxt, galleryImages: $galleryImages)';
   }
 
   @override
@@ -402,9 +402,10 @@ class _$NewContractStateImpl extends _NewContractState {
             other is _$NewContractStateImpl &&
             (identical(other.landLordName, landLordName) ||
                 other.landLordName == landLordName) &&
-            (identical(other.nuiLandLord, nuiLandLord) ||
-                other.nuiLandLord == nuiLandLord) &&
-            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.landLordNui, landLordNui) ||
+                other.landLordNui == landLordNui) &&
+            (identical(other.landLordPhone, landLordPhone) ||
+                other.landLordPhone == landLordPhone) &&
             (identical(other.city, city) || other.city == city) &&
             (identical(other.rooms, rooms) || other.rooms == rooms) &&
             (identical(other.bathRooms, bathRooms) ||
@@ -435,8 +436,8 @@ class _$NewContractStateImpl extends _NewContractState {
   int get hashCode => Object.hash(
       runtimeType,
       landLordName,
-      nuiLandLord,
-      phone,
+      landLordNui,
+      landLordPhone,
       city,
       rooms,
       bathRooms,
@@ -463,8 +464,8 @@ class _$NewContractStateImpl extends _NewContractState {
 abstract class _NewContractState extends NewContractState {
   const factory _NewContractState(
       {final String landLordName,
-      final String nuiLandLord,
-      final String phone,
+      final String landLordNui,
+      final String landLordPhone,
       final String city,
       final int rooms,
       final int bathRooms,
@@ -484,9 +485,9 @@ abstract class _NewContractState extends NewContractState {
   @override // user
   String get landLordName;
   @override
-  String get nuiLandLord;
+  String get landLordNui;
   @override
-  String get phone;
+  String get landLordPhone;
   @override // property
   String get city;
   @override

@@ -36,7 +36,7 @@ class SplashController extends StateNotifier<SplashState> {
 
   Future<void> isJwtToken() async {
     final accessToken = await _deviceUtilsRepository.accessToken;
-    if (accessToken.isJwtToken) {
+    if (accessToken.isJwtToken && accessToken.isNotEmpty) {
       state.context?.pushReplacementNamed(
         HomeRoute.path,
       );

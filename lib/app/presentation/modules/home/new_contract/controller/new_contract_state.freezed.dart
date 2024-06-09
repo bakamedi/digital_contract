@@ -17,9 +17,15 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$NewContractState {
   String get city => throw _privateConstructorUsedError;
-  String get location => throw _privateConstructorUsedError;
+  int get rooms => throw _privateConstructorUsedError;
+  int get bathRooms => throw _privateConstructorUsedError;
+  double get lat => throw _privateConstructorUsedError;
+  double get lng => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
-  String get value => throw _privateConstructorUsedError;
+  String get address => throw _privateConstructorUsedError;
+  String get serviceWaterPrice => throw _privateConstructorUsedError;
+  String get serviceElectricityPrice => throw _privateConstructorUsedError;
+  String get serviceInternetPrice => throw _privateConstructorUsedError;
   List<bool> get services => throw _privateConstructorUsedError;
   PageController? get stepperContractController =>
       throw _privateConstructorUsedError;
@@ -39,9 +45,15 @@ abstract class $NewContractStateCopyWith<$Res> {
   @useResult
   $Res call(
       {String city,
-      String location,
+      int rooms,
+      int bathRooms,
+      double lat,
+      double lng,
       String phone,
-      String value,
+      String address,
+      String serviceWaterPrice,
+      String serviceElectricityPrice,
+      String serviceInternetPrice,
       List<bool> services,
       PageController? stepperContractController,
       String nextDoneTxt,
@@ -62,9 +74,15 @@ class _$NewContractStateCopyWithImpl<$Res, $Val extends NewContractState>
   @override
   $Res call({
     Object? city = null,
-    Object? location = null,
+    Object? rooms = null,
+    Object? bathRooms = null,
+    Object? lat = null,
+    Object? lng = null,
     Object? phone = null,
-    Object? value = null,
+    Object? address = null,
+    Object? serviceWaterPrice = null,
+    Object? serviceElectricityPrice = null,
+    Object? serviceInternetPrice = null,
     Object? services = null,
     Object? stepperContractController = freezed,
     Object? nextDoneTxt = null,
@@ -75,17 +93,41 @@ class _$NewContractStateCopyWithImpl<$Res, $Val extends NewContractState>
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
               as String,
-      location: null == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as String,
+      rooms: null == rooms
+          ? _value.rooms
+          : rooms // ignore: cast_nullable_to_non_nullable
+              as int,
+      bathRooms: null == bathRooms
+          ? _value.bathRooms
+          : bathRooms // ignore: cast_nullable_to_non_nullable
+              as int,
+      lat: null == lat
+          ? _value.lat
+          : lat // ignore: cast_nullable_to_non_nullable
+              as double,
+      lng: null == lng
+          ? _value.lng
+          : lng // ignore: cast_nullable_to_non_nullable
+              as double,
       phone: null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      serviceWaterPrice: null == serviceWaterPrice
+          ? _value.serviceWaterPrice
+          : serviceWaterPrice // ignore: cast_nullable_to_non_nullable
+              as String,
+      serviceElectricityPrice: null == serviceElectricityPrice
+          ? _value.serviceElectricityPrice
+          : serviceElectricityPrice // ignore: cast_nullable_to_non_nullable
+              as String,
+      serviceInternetPrice: null == serviceInternetPrice
+          ? _value.serviceInternetPrice
+          : serviceInternetPrice // ignore: cast_nullable_to_non_nullable
               as String,
       services: null == services
           ? _value.services
@@ -117,9 +159,15 @@ abstract class _$$NewContractStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {String city,
-      String location,
+      int rooms,
+      int bathRooms,
+      double lat,
+      double lng,
       String phone,
-      String value,
+      String address,
+      String serviceWaterPrice,
+      String serviceElectricityPrice,
+      String serviceInternetPrice,
       List<bool> services,
       PageController? stepperContractController,
       String nextDoneTxt,
@@ -138,9 +186,15 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? city = null,
-    Object? location = null,
+    Object? rooms = null,
+    Object? bathRooms = null,
+    Object? lat = null,
+    Object? lng = null,
     Object? phone = null,
-    Object? value = null,
+    Object? address = null,
+    Object? serviceWaterPrice = null,
+    Object? serviceElectricityPrice = null,
+    Object? serviceInternetPrice = null,
     Object? services = null,
     Object? stepperContractController = freezed,
     Object? nextDoneTxt = null,
@@ -151,17 +205,41 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
               as String,
-      location: null == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as String,
+      rooms: null == rooms
+          ? _value.rooms
+          : rooms // ignore: cast_nullable_to_non_nullable
+              as int,
+      bathRooms: null == bathRooms
+          ? _value.bathRooms
+          : bathRooms // ignore: cast_nullable_to_non_nullable
+              as int,
+      lat: null == lat
+          ? _value.lat
+          : lat // ignore: cast_nullable_to_non_nullable
+              as double,
+      lng: null == lng
+          ? _value.lng
+          : lng // ignore: cast_nullable_to_non_nullable
+              as double,
       phone: null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      serviceWaterPrice: null == serviceWaterPrice
+          ? _value.serviceWaterPrice
+          : serviceWaterPrice // ignore: cast_nullable_to_non_nullable
+              as String,
+      serviceElectricityPrice: null == serviceElectricityPrice
+          ? _value.serviceElectricityPrice
+          : serviceElectricityPrice // ignore: cast_nullable_to_non_nullable
+              as String,
+      serviceInternetPrice: null == serviceInternetPrice
+          ? _value.serviceInternetPrice
+          : serviceInternetPrice // ignore: cast_nullable_to_non_nullable
               as String,
       services: null == services
           ? _value._services
@@ -188,9 +266,15 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
 class _$NewContractStateImpl extends _NewContractState {
   const _$NewContractStateImpl(
       {this.city = '',
-      this.location = '',
+      this.rooms = 0,
+      this.bathRooms = 0,
+      this.lat = 0.0,
+      this.lng = 0.0,
       this.phone = '',
-      this.value = '',
+      this.address = '',
+      this.serviceWaterPrice = '',
+      this.serviceElectricityPrice = '',
+      this.serviceInternetPrice = '',
       final List<bool> services = const [true, false, false],
       this.stepperContractController,
       this.nextDoneTxt = 'Siguiente',
@@ -204,13 +288,31 @@ class _$NewContractStateImpl extends _NewContractState {
   final String city;
   @override
   @JsonKey()
-  final String location;
+  final int rooms;
+  @override
+  @JsonKey()
+  final int bathRooms;
+  @override
+  @JsonKey()
+  final double lat;
+  @override
+  @JsonKey()
+  final double lng;
   @override
   @JsonKey()
   final String phone;
   @override
   @JsonKey()
-  final String value;
+  final String address;
+  @override
+  @JsonKey()
+  final String serviceWaterPrice;
+  @override
+  @JsonKey()
+  final String serviceElectricityPrice;
+  @override
+  @JsonKey()
+  final String serviceInternetPrice;
   final List<bool> _services;
   @override
   @JsonKey()
@@ -236,7 +338,7 @@ class _$NewContractStateImpl extends _NewContractState {
 
   @override
   String toString() {
-    return 'NewContractState(city: $city, location: $location, phone: $phone, value: $value, services: $services, stepperContractController: $stepperContractController, nextDoneTxt: $nextDoneTxt, galleryImages: $galleryImages)';
+    return 'NewContractState(city: $city, rooms: $rooms, bathRooms: $bathRooms, lat: $lat, lng: $lng, phone: $phone, address: $address, serviceWaterPrice: $serviceWaterPrice, serviceElectricityPrice: $serviceElectricityPrice, serviceInternetPrice: $serviceInternetPrice, services: $services, stepperContractController: $stepperContractController, nextDoneTxt: $nextDoneTxt, galleryImages: $galleryImages)';
   }
 
   @override
@@ -245,10 +347,20 @@ class _$NewContractStateImpl extends _NewContractState {
         (other.runtimeType == runtimeType &&
             other is _$NewContractStateImpl &&
             (identical(other.city, city) || other.city == city) &&
-            (identical(other.location, location) ||
-                other.location == location) &&
+            (identical(other.rooms, rooms) || other.rooms == rooms) &&
+            (identical(other.bathRooms, bathRooms) ||
+                other.bathRooms == bathRooms) &&
+            (identical(other.lat, lat) || other.lat == lat) &&
+            (identical(other.lng, lng) || other.lng == lng) &&
             (identical(other.phone, phone) || other.phone == phone) &&
-            (identical(other.value, value) || other.value == value) &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.serviceWaterPrice, serviceWaterPrice) ||
+                other.serviceWaterPrice == serviceWaterPrice) &&
+            (identical(
+                    other.serviceElectricityPrice, serviceElectricityPrice) ||
+                other.serviceElectricityPrice == serviceElectricityPrice) &&
+            (identical(other.serviceInternetPrice, serviceInternetPrice) ||
+                other.serviceInternetPrice == serviceInternetPrice) &&
             const DeepCollectionEquality().equals(other._services, _services) &&
             (identical(other.stepperContractController,
                     stepperContractController) ||
@@ -263,9 +375,15 @@ class _$NewContractStateImpl extends _NewContractState {
   int get hashCode => Object.hash(
       runtimeType,
       city,
-      location,
+      rooms,
+      bathRooms,
+      lat,
+      lng,
       phone,
-      value,
+      address,
+      serviceWaterPrice,
+      serviceElectricityPrice,
+      serviceInternetPrice,
       const DeepCollectionEquality().hash(_services),
       stepperContractController,
       nextDoneTxt,
@@ -282,9 +400,15 @@ class _$NewContractStateImpl extends _NewContractState {
 abstract class _NewContractState extends NewContractState {
   const factory _NewContractState(
       {final String city,
-      final String location,
+      final int rooms,
+      final int bathRooms,
+      final double lat,
+      final double lng,
       final String phone,
-      final String value,
+      final String address,
+      final String serviceWaterPrice,
+      final String serviceElectricityPrice,
+      final String serviceInternetPrice,
       final List<bool> services,
       final PageController? stepperContractController,
       final String nextDoneTxt,
@@ -294,11 +418,23 @@ abstract class _NewContractState extends NewContractState {
   @override
   String get city;
   @override
-  String get location;
+  int get rooms;
+  @override
+  int get bathRooms;
+  @override
+  double get lat;
+  @override
+  double get lng;
   @override
   String get phone;
   @override
-  String get value;
+  String get address;
+  @override
+  String get serviceWaterPrice;
+  @override
+  String get serviceElectricityPrice;
+  @override
+  String get serviceInternetPrice;
   @override
   List<bool> get services;
   @override

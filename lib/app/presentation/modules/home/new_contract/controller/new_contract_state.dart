@@ -9,9 +9,15 @@ class NewContractState with _$NewContractState {
   const NewContractState._();
   const factory NewContractState({
     @Default('') String city,
-    @Default('') String location,
+    @Default(0) int rooms,
+    @Default(0) int bathRooms,
+    @Default(0.0) double lat,
+    @Default(0.0) double lng,
     @Default('') String phone,
-    @Default('') String value,
+    @Default('') String address,
+    @Default('') String serviceWaterPrice,
+    @Default('') String serviceElectricityPrice,
+    @Default('') String serviceInternetPrice,
     @Default([true, false, false]) List<bool> services,
     PageController? stepperContractController,
     @Default('Siguiente') String nextDoneTxt,

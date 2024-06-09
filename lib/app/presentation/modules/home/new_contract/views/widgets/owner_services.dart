@@ -5,6 +5,7 @@ import '../../../../../../core/responsive/responsive.dart';
 import '../../../../../global/widgets/input_fields/text_text_form_field.dart';
 import '../../../../../global/widgets/maps/maps_gw.dart';
 import '../../controller/new_contract_controller.dart';
+import '../../utils/update_field_property.dart';
 
 class OwnerServices extends StatelessWidget {
   final Responsive responsive;
@@ -22,20 +23,32 @@ class OwnerServices extends StatelessWidget {
       child: Column(
         children: [
           InputTextField(
+            onChanged: (value) => newContractController.onChangeField(
+              UpdateFieldProperty.city,
+              value,
+            ),
             backgroundText: 'Ciudad',
             prefixIcon: const Icon(
               DigitalContractIcons.city_solid,
             ),
-            onChanged: (value) {},
           ),
           InputTextField(
+            onChanged: (value) => newContractController.onChangeField(
+              UpdateFieldProperty.address,
+              value,
+            ),
             backgroundText: 'Ubicación',
             prefixIcon: const Icon(
               DigitalContractIcons.map_location_dot_solid,
             ),
-            onChanged: (value) {},
           ),
-          MapsGW(),
+          MapsGW(
+            onTapLatLng: (latLng) => newContractController.onChangeField(
+              UpdateFieldProperty.latLng,
+              '',
+              latLng: latLng,
+            ),
+          ),
         ],
       ),
     );

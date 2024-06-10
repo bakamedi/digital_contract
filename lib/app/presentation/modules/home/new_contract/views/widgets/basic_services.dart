@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../../core/icons/digital_contract_icons.dart';
 import '../../../../../../core/responsive/responsive.dart';
 import '../../../../../global/extensions/widgets_ext.dart';
+import '../../../../../global/widgets/input_fields/text_text_form_field.dart';
 import '../../controller/new_contract_controller.dart';
 import '../../utils/service.enum.dart';
 import 'basic_service_item.dart';
@@ -23,6 +24,14 @@ class BasicServices extends StatelessWidget {
     return SliverToBoxAdapter(
       child: Column(
         children: [
+          const Text('Pago del Arriendo'),
+          InputTextField(
+            onChanged: (value) {},
+            backgroundText: 'Pago del Alquiler',
+            prefixIcon: const Icon(
+              DigitalContractIcons.city_solid,
+            ),
+          ),
           const Text('Servicios Básicos(Opcional)'),
           const Text(
             'Solo seleccione lo que usted va cubrir lo demás lo cubrira el arrendatario',
@@ -54,10 +63,6 @@ class BasicServices extends StatelessWidget {
             name: 'Valor Internet',
           ),
         ],
-      ).padding(
-        EdgeInsets.only(
-          bottom: responsive.hp(30),
-        ),
       ),
     );
   }

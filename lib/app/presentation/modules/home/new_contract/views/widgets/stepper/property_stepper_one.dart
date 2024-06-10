@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../../core/responsive/responsive.dart';
 import '../../../controller/new_contract_controller.dart';
-import '../basic_services.dart';
 import '../owner_services.dart';
 
 class PropertyStepperOne extends StatelessWidget {
@@ -20,10 +19,6 @@ class PropertyStepperOne extends StatelessWidget {
       shrinkWrap: true,
       slivers: [
         OwnerServices(
-          responsive: responsive,
-          newContractController: newContractController,
-        ),
-        BasicServices(
           responsive: responsive,
           newContractController: newContractController,
         ),

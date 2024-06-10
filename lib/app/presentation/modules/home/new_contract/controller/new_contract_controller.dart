@@ -67,13 +67,13 @@ class NewContractController extends StateNotifier<NewContractState> {
   }
 
   void onChangeTxtByStepper(int page) {
-    if (page == 0) {
+    if (page == 0 || page == 1) {
       onlyUpdate(
         state = state.copyWith(
           nextDoneTxt: 'Siguiente',
         ),
       );
-    } else if (page == 1) {
+    } else if (page == 2) {
       onlyUpdate(
         state = state.copyWith(
           nextDoneTxt: 'Crear Propiedad',
@@ -86,7 +86,7 @@ class NewContractController extends StateNotifier<NewContractState> {
     const duration = Duration(milliseconds: 500);
     const curve = Curves.ease;
     final page = stepperContractController!.page;
-    if (page == 1.0) {
+    if (page == 2.0) {
     } else {
       stepperContractController!.nextPage(
         duration: duration,

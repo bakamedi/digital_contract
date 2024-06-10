@@ -23,9 +23,11 @@ class MapsGW extends StatelessWidget {
       builder: (_, ref, __) {
         final mapsGlobalController = ref.watch(mapsGlobalProvider);
         return Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20),
+          margin: const EdgeInsets.symmetric(
+            horizontal: 20,
+          ),
           width: responsive.width,
-          height: responsive.height / 3,
+          height: responsive.height / 2,
           child: GoogleMap(
             markers: mapsGlobalController.makers,
             initialCameraPosition: mapsGlobalController.initialCameraPosition!,

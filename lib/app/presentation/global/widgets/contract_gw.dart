@@ -172,7 +172,7 @@ class ContractGW extends StatelessWidget {
               _textItem(
                 responsive,
                 text:
-                    'dólares, valor que será cancelado de forma mensual, pagaderos y por mesadas anticipadas entre los tres primeros días del inicio de cada mes, el mismo que dará inicio desde ',
+                    ' dólares, valor que será cancelado de forma mensual, pagaderos y por mesadas anticipadas entre los tres primeros días del inicio de cada mes, el mismo que dará inicio desde ',
               ),
               _textItem(
                 responsive,

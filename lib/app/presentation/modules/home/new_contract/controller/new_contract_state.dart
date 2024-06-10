@@ -13,6 +13,7 @@ class NewContractState with _$NewContractState {
     @Default('') String landLordNui,
     @Default('') String landLordPhone,
     // property
+    @Default('') String propertyPrice,
     @Default('') String city,
     @Default(0) int rooms,
     @Default(0) int bathRooms,

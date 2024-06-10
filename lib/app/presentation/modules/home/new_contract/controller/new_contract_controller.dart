@@ -4,10 +4,13 @@ import 'package:flutter_meedu/providers.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../../../domain/models/property/dto/property_dto.dart';
 import '../../../../global/utils/money_currency.dart';
 import '../utils/service.enum.dart';
 import '../utils/update_field_property.dart';
 import 'new_contract_state.dart';
+
+import '../../../../global/extensions/double_ext.dart';
 
 final newContractProvider =
     Provider.state<NewContractController, NewContractState>(
@@ -25,6 +28,9 @@ class NewContractController extends StateNotifier<NewContractState> {
   String get landLordName => state.landLordName;
   String get landLordNui => state.landLordNui;
   String get landLordPhone => state.landLordPhone;
+  double get propertyPrice => CurrencyMoneyUtil.formatAmountDouble(
+        state.propertyPrice,
+      );
   String get city => state.city;
   int get rooms => state.rooms;
   int get bathRooms => state.bathRooms;
@@ -41,6 +47,21 @@ class NewContractController extends StateNotifier<NewContractState> {
   double get serviceInternetPrice => CurrencyMoneyUtil.formatAmountDouble(
         state.serviceInternetPrice,
       );
+
+  PropertyDto createPropertyDTO() {
+    return PropertyDto(
+      address: address,
+      rooms: rooms,
+      bathrooms: bathRooms,
+      propertyPrice: propertyPrice,
+      electricService: serviceElectricityPrice.isServiceEnabled,
+      waterService: serviceElectricityPrice.isServiceEnabled,
+      internetService: serviceInternetPrice.isServiceEnabled,
+      electricServicePrice: serviceElectricityPrice,
+      waterServicePrice: serviceWaterPrice,
+      internetServicePrice: serviceInternetPrice,
+    );
+  }
 
   void loadLandLordData(
     String landLordName,
@@ -161,6 +182,12 @@ class NewContractController extends StateNotifier<NewContractState> {
           ),
         );
         break;
+      case UpdateFieldProperty.propertyPrice:
+        onlyUpdate(
+          state = state.copyWith(
+            propertyPrice: value ?? '',
+          ),
+        );
     }
   }
 }

@@ -20,6 +20,7 @@ mixin _$NewContractState {
   String get landLordName => throw _privateConstructorUsedError;
   String get landLordNui => throw _privateConstructorUsedError;
   String get landLordPhone => throw _privateConstructorUsedError; // property
+  String get propertyPrice => throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
   int get rooms => throw _privateConstructorUsedError;
   int get bathRooms => throw _privateConstructorUsedError;
@@ -51,6 +52,7 @@ abstract class $NewContractStateCopyWith<$Res> {
       {String landLordName,
       String landLordNui,
       String landLordPhone,
+      String propertyPrice,
       String city,
       int rooms,
       int bathRooms,
@@ -83,6 +85,7 @@ class _$NewContractStateCopyWithImpl<$Res, $Val extends NewContractState>
     Object? landLordName = null,
     Object? landLordNui = null,
     Object? landLordPhone = null,
+    Object? propertyPrice = null,
     Object? city = null,
     Object? rooms = null,
     Object? bathRooms = null,
@@ -110,6 +113,10 @@ class _$NewContractStateCopyWithImpl<$Res, $Val extends NewContractState>
       landLordPhone: null == landLordPhone
           ? _value.landLordPhone
           : landLordPhone // ignore: cast_nullable_to_non_nullable
+              as String,
+      propertyPrice: null == propertyPrice
+          ? _value.propertyPrice
+          : propertyPrice // ignore: cast_nullable_to_non_nullable
               as String,
       city: null == city
           ? _value.city
@@ -183,6 +190,7 @@ abstract class _$$NewContractStateImplCopyWith<$Res>
       {String landLordName,
       String landLordNui,
       String landLordPhone,
+      String propertyPrice,
       String city,
       int rooms,
       int bathRooms,
@@ -213,6 +221,7 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
     Object? landLordName = null,
     Object? landLordNui = null,
     Object? landLordPhone = null,
+    Object? propertyPrice = null,
     Object? city = null,
     Object? rooms = null,
     Object? bathRooms = null,
@@ -240,6 +249,10 @@ class __$$NewContractStateImplCopyWithImpl<$Res>
       landLordPhone: null == landLordPhone
           ? _value.landLordPhone
           : landLordPhone // ignore: cast_nullable_to_non_nullable
+              as String,
+      propertyPrice: null == propertyPrice
+          ? _value.propertyPrice
+          : propertyPrice // ignore: cast_nullable_to_non_nullable
               as String,
       city: null == city
           ? _value.city
@@ -308,6 +321,7 @@ class _$NewContractStateImpl extends _NewContractState {
       {this.landLordName = '',
       this.landLordNui = '',
       this.landLordPhone = '',
+      this.propertyPrice = '',
       this.city = '',
       this.rooms = 0,
       this.bathRooms = 0,
@@ -337,6 +351,9 @@ class _$NewContractStateImpl extends _NewContractState {
   @JsonKey()
   final String landLordPhone;
 // property
+  @override
+  @JsonKey()
+  final String propertyPrice;
   @override
   @JsonKey()
   final String city;
@@ -392,7 +409,7 @@ class _$NewContractStateImpl extends _NewContractState {
 
   @override
   String toString() {
-    return 'NewContractState(landLordName: $landLordName, landLordNui: $landLordNui, landLordPhone: $landLordPhone, city: $city, rooms: $rooms, bathRooms: $bathRooms, lat: $lat, lng: $lng, address: $address, province: $province, serviceWaterPrice: $serviceWaterPrice, serviceElectricityPrice: $serviceElectricityPrice, serviceInternetPrice: $serviceInternetPrice, services: $services, stepperContractController: $stepperContractController, nextDoneTxt: $nextDoneTxt, galleryImages: $galleryImages)';
+    return 'NewContractState(landLordName: $landLordName, landLordNui: $landLordNui, landLordPhone: $landLordPhone, propertyPrice: $propertyPrice, city: $city, rooms: $rooms, bathRooms: $bathRooms, lat: $lat, lng: $lng, address: $address, province: $province, serviceWaterPrice: $serviceWaterPrice, serviceElectricityPrice: $serviceElectricityPrice, serviceInternetPrice: $serviceInternetPrice, services: $services, stepperContractController: $stepperContractController, nextDoneTxt: $nextDoneTxt, galleryImages: $galleryImages)';
   }
 
   @override
@@ -406,6 +423,8 @@ class _$NewContractStateImpl extends _NewContractState {
                 other.landLordNui == landLordNui) &&
             (identical(other.landLordPhone, landLordPhone) ||
                 other.landLordPhone == landLordPhone) &&
+            (identical(other.propertyPrice, propertyPrice) ||
+                other.propertyPrice == propertyPrice) &&
             (identical(other.city, city) || other.city == city) &&
             (identical(other.rooms, rooms) || other.rooms == rooms) &&
             (identical(other.bathRooms, bathRooms) ||
@@ -438,6 +457,7 @@ class _$NewContractStateImpl extends _NewContractState {
       landLordName,
       landLordNui,
       landLordPhone,
+      propertyPrice,
       city,
       rooms,
       bathRooms,
@@ -466,6 +486,7 @@ abstract class _NewContractState extends NewContractState {
       {final String landLordName,
       final String landLordNui,
       final String landLordPhone,
+      final String propertyPrice,
       final String city,
       final int rooms,
       final int bathRooms,
@@ -489,6 +510,8 @@ abstract class _NewContractState extends NewContractState {
   @override
   String get landLordPhone;
   @override // property
+  String get propertyPrice;
+  @override
   String get city;
   @override
   int get rooms;

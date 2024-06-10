@@ -1,4 +1,5 @@
 enum UpdateFieldProperty {
+  propertyPrice,
   serviceWaterPrice,
   serviceElectricityPrice,
   serviceInternetPrice,

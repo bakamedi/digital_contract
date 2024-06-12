@@ -5,7 +5,7 @@ import 'package:flutter_meedu/consumer.dart';
 import '../../../../core/icons/digital_contract_icons.dart';
 import '../../../../core/responsive/responsive.dart';
 
-import '../../../global/extensions/widgets_ext.dart';
+import '../../../../core/extensions/widgets_ext.dart';
 import '../controller/splash_controller.dart';
 
 class SplashView extends StatelessWidget {

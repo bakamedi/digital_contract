@@ -37,19 +37,19 @@ mixin _$PropertySuccess {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UserNotFound value) created,
+    required TResult Function(_PropertyCreated value) created,
     required TResult Function(_Network value) ok,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UserNotFound value)? created,
+    TResult? Function(_PropertyCreated value)? created,
     TResult? Function(_Network value)? ok,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UserNotFound value)? created,
+    TResult Function(_PropertyCreated value)? created,
     TResult Function(_Network value)? ok,
     required TResult orElse(),
   }) =>
@@ -75,25 +75,25 @@ class _$PropertySuccessCopyWithImpl<$Res, $Val extends PropertySuccess>
 }
 
 /// @nodoc
-abstract class _$$UserNotFoundImplCopyWith<$Res> {
-  factory _$$UserNotFoundImplCopyWith(
-          _$UserNotFoundImpl value, $Res Function(_$UserNotFoundImpl) then) =
-      __$$UserNotFoundImplCopyWithImpl<$Res>;
+abstract class _$$PropertyCreatedImplCopyWith<$Res> {
+  factory _$$PropertyCreatedImplCopyWith(_$PropertyCreatedImpl value,
+          $Res Function(_$PropertyCreatedImpl) then) =
+      __$$PropertyCreatedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserNotFoundImplCopyWithImpl<$Res>
-    extends _$PropertySuccessCopyWithImpl<$Res, _$UserNotFoundImpl>
-    implements _$$UserNotFoundImplCopyWith<$Res> {
-  __$$UserNotFoundImplCopyWithImpl(
-      _$UserNotFoundImpl _value, $Res Function(_$UserNotFoundImpl) _then)
+class __$$PropertyCreatedImplCopyWithImpl<$Res>
+    extends _$PropertySuccessCopyWithImpl<$Res, _$PropertyCreatedImpl>
+    implements _$$PropertyCreatedImplCopyWith<$Res> {
+  __$$PropertyCreatedImplCopyWithImpl(
+      _$PropertyCreatedImpl _value, $Res Function(_$PropertyCreatedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$UserNotFoundImpl implements _UserNotFound {
-  const _$UserNotFoundImpl();
+class _$PropertyCreatedImpl implements _PropertyCreated {
+  const _$PropertyCreatedImpl();
 
   @override
   String toString() {
@@ -103,7 +103,7 @@ class _$UserNotFoundImpl implements _UserNotFound {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UserNotFoundImpl);
+        (other.runtimeType == runtimeType && other is _$PropertyCreatedImpl);
   }
 
   @override
@@ -143,7 +143,7 @@ class _$UserNotFoundImpl implements _UserNotFound {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UserNotFound value) created,
+    required TResult Function(_PropertyCreated value) created,
     required TResult Function(_Network value) ok,
   }) {
     return created(this);
@@ -152,7 +152,7 @@ class _$UserNotFoundImpl implements _UserNotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UserNotFound value)? created,
+    TResult? Function(_PropertyCreated value)? created,
     TResult? Function(_Network value)? ok,
   }) {
     return created?.call(this);
@@ -161,7 +161,7 @@ class _$UserNotFoundImpl implements _UserNotFound {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UserNotFound value)? created,
+    TResult Function(_PropertyCreated value)? created,
     TResult Function(_Network value)? ok,
     required TResult orElse(),
   }) {
@@ -172,8 +172,8 @@ class _$UserNotFoundImpl implements _UserNotFound {
   }
 }
 
-abstract class _UserNotFound implements PropertySuccess {
-  const factory _UserNotFound() = _$UserNotFoundImpl;
+abstract class _PropertyCreated implements PropertySuccess {
+  const factory _PropertyCreated() = _$PropertyCreatedImpl;
 }
 
 /// @nodoc
@@ -245,7 +245,7 @@ class _$NetworkImpl implements _Network {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UserNotFound value) created,
+    required TResult Function(_PropertyCreated value) created,
     required TResult Function(_Network value) ok,
   }) {
     return ok(this);
@@ -254,7 +254,7 @@ class _$NetworkImpl implements _Network {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UserNotFound value)? created,
+    TResult? Function(_PropertyCreated value)? created,
     TResult? Function(_Network value)? ok,
   }) {
     return ok?.call(this);
@@ -263,7 +263,7 @@ class _$NetworkImpl implements _Network {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UserNotFound value)? created,
+    TResult Function(_PropertyCreated value)? created,
     TResult Function(_Network value)? ok,
     required TResult orElse(),
   }) {

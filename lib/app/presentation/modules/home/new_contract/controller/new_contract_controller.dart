@@ -15,7 +15,7 @@ import '../utils/service.enum.dart';
 import '../utils/update_field_property.dart';
 import 'new_contract_state.dart';
 
-import '../../../../global/extensions/double_ext.dart';
+import '../../../../../core/extensions/double_ext.dart';
 
 final newContractProvider =
     Provider.state<NewContractController, NewContractState>(
@@ -32,6 +32,7 @@ class NewContractController extends StateNotifier<NewContractState> {
     super.initialState, {
     required PropertyRepository propertyRepository,
   }) : _propertyRepository = propertyRepository;
+
 
   PageController? get stepperContractController =>
       state.stepperContractController;

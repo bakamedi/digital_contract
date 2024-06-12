@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:digital_contract/app/presentation/global/extensions/widgets_ext.dart';
 import 'package:flutter_meedu/consumer.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/icons/digital_contract_icons.dart';
 import '../../../../core/responsive/responsive.dart';
 import '../../../global/utils/open_external_app.dart';
-import '../../../global/widgets/amenities.dart';
 import '../../../router/routes/bill_route.dart';
 import '../controller/contract_controller.dart';
 import 'widgets/bottom_names_w.dart';
@@ -40,17 +38,17 @@ class ContractView extends StatelessWidget {
                 title: 'Samanes 4, Mz 888 Solar 342',
                 name: 'Bakke Medina Abarca',
               ),
-              SliverToBoxAdapter(
-                child: Amenities(
-                  responsive: responsive,
-                ).padding(
-                  EdgeInsets.only(
-                    top: responsive.bhp(0.5),
-                    bottom: responsive.bhp(1.5),
-                    left: responsive.bwh(4),
-                  ),
-                ),
-              ),
+              // SliverToBoxAdapter(
+              //   child: Amenities(
+              //     responsive: responsive,
+              //   ).padding(
+              //     EdgeInsets.only(
+              //       top: responsive.bhp(0.5),
+              //       bottom: responsive.bhp(1.5),
+              //       left: responsive.bwh(4),
+              //     ),
+              //   ),
+              // ),
               SliverToBoxAdapter(
                 child: DescriptionW(
                   responsive: responsive,

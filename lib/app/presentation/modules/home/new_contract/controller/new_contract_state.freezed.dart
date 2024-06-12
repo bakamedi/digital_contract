@@ -16,10 +16,11 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NewContractState {
-// user
+// landlord
   String get landLordName => throw _privateConstructorUsedError;
   String get landLordNui => throw _privateConstructorUsedError;
-  String get landLordPhone => throw _privateConstructorUsedError; // property
+  String get landLordPhone =>
+      throw _privateConstructorUsedError; // new property
   String get price => throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
   int get rooms => throw _privateConstructorUsedError;
@@ -340,7 +341,7 @@ class _$NewContractStateImpl extends _NewContractState {
         _galleryImages = galleryImages,
         super._();
 
-// user
+// landlord
   @override
   @JsonKey()
   final String landLordName;
@@ -350,7 +351,7 @@ class _$NewContractStateImpl extends _NewContractState {
   @override
   @JsonKey()
   final String landLordPhone;
-// property
+// new property
   @override
   @JsonKey()
   final String price;
@@ -502,13 +503,13 @@ abstract class _NewContractState extends NewContractState {
       final List<XFile> galleryImages}) = _$NewContractStateImpl;
   const _NewContractState._() : super._();
 
-  @override // user
+  @override // landlord
   String get landLordName;
   @override
   String get landLordNui;
   @override
   String get landLordPhone;
-  @override // property
+  @override // new property
   String get price;
   @override
   String get city;

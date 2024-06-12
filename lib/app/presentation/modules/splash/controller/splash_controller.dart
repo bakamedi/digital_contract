@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../dependency_injection.dart.dart';
 import '../../../../domain/repositories/device_utils_repository.dart';
-import '../../../global/extensions/strings_ext.dart';
+import '../../../../core/extensions/strings_ext.dart';
 
 import '../../../router/routes/home_route.dart';
 import '../../../router/routes/sign_in_route.dart';

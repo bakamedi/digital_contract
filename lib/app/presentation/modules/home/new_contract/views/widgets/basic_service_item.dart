@@ -4,7 +4,7 @@ import '../../../../../../core/responsive/responsive.dart';
 import '../../../../../../core/theme/theme_app_data.dart';
 import '../../../../../global/widgets/input_fields/text_text_form_field.dart';
 
-import '../../../../../global/extensions/widgets_ext.dart';
+import '../../../../../../core/extensions/widgets_ext.dart';
 
 class BasicServiceItem extends StatelessWidget {
   final bool selected;

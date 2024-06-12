@@ -8,11 +8,11 @@ part 'new_contract_state.freezed.dart';
 class NewContractState with _$NewContractState {
   const NewContractState._();
   const factory NewContractState({
-    // user
+    // landlord
     @Default('') String landLordName,
     @Default('') String landLordNui,
     @Default('') String landLordPhone,
-    // property
+    // new property
     @Default('') String price,
     @Default('') String city,
     @Default(0) int rooms,

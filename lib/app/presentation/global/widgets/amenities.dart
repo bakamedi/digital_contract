@@ -3,12 +3,21 @@ import 'package:flutter/material.dart';
 import '../../../core/icons/digital_contract_icons.dart';
 import '../../../core/responsive/responsive.dart';
 import '../../../core/theme/theme_app_data.dart';
+import '../../../domain/models/property/response/property_model.dart';
+
+import '../../../core/extensions/bool_ext.dart';
 
 const radiusCircular = Radius.circular(10);
 
 class Amenities extends StatelessWidget {
   final Responsive responsive;
-  const Amenities({super.key, required this.responsive});
+  final Datum property;
+
+  const Amenities({
+    super.key,
+    required this.responsive,
+    required this.property,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,45 +28,40 @@ class Amenities extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         children: [
           _itemPay(
-            name: '2',
+            name: property.rooms.toString(),
             responsive: responsive,
             iconData: DigitalContractIcons.bed_solid,
           ),
           _itemPay(
-            name: '2',
+            name: property.bathrooms.toString(),
             responsive: responsive,
             iconData: DigitalContractIcons.bath_solid,
           ),
           _itemPay(
-            name: 'No',
+            name: property.internetService.yesOrNo,
             responsive: responsive,
             iconData: DigitalContractIcons.wifi_solid,
           ),
           _itemPay(
-            name: 'Sí',
+            name: property.electricService.yesOrNo,
             responsive: responsive,
             iconData: DigitalContractIcons.lightbulb_solid,
           ),
           _itemPay(
-            name: 'No',
+            name: property.waterService.yesOrNo,
             responsive: responsive,
             iconData: DigitalContractIcons.faucet_drip_solid,
           ),
-          _itemPay(
-            name: 'No',
-            responsive: responsive,
-            iconData: DigitalContractIcons.paw_solid,
-          ),
-          _itemPay(
-            name: 'No',
-            responsive: responsive,
-            iconData: DigitalContractIcons.square_parking_solid,
-          ),
-          _itemPay(
-            name: 'No',
-            responsive: responsive,
-            iconData: DigitalContractIcons.square_parking_solid,
-          ),
+          // _itemPay(
+          //   name: 'No',
+          //   responsive: responsive,
+          //   iconData: DigitalContractIcons.paw_solid,
+          // ),
+          // _itemPay(
+          //   name: 'No',
+          //   responsive: responsive,
+          //   iconData: DigitalContractIcons.square_parking_solid,
+          // ),
         ],
       ),
     );

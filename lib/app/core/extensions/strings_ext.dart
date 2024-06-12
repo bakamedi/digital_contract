@@ -28,6 +28,10 @@ extension StringExt on String {
     return initials;
   }
 
+  String concat(String cat) {
+    return this + cat;
+  }
+
   bool get isJwtToken {
     if (isEmpty) {
       return isEmpty;

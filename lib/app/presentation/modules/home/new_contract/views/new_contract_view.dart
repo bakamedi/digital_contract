@@ -5,7 +5,7 @@ import '../../../../../core/responsive/responsive.dart';
 import '../../../../global/widgets/app_bar.dart';
 import '../../../../global/widgets/buttons/primary_btn.dart';
 import '../controller/new_contract_controller.dart';
-import '../../../../global/extensions/widgets_ext.dart';
+import '../../../../../core/extensions/widgets_ext.dart';
 import '../utils/change_stepper.dart';
 import 'widgets/stepper/property_images_two.dart';
 import 'widgets/stepper/property_stepper_one.dart';

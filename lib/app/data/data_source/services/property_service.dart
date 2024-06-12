@@ -1,6 +1,7 @@
 import '../../../core/either.dart';
 import '../../../domain/failures/failure.dart';
 import '../../../domain/models/property/dto/property_dto.dart';
+import '../../../domain/models/property/response/property_model.dart';
 import '../../../domain/success/property_success.dart';
 import '../../helpers/device_util_helper.dart';
 import '../../http_helper.dart';
@@ -34,6 +35,50 @@ class PropertyService {
         developer.log(data, name: 'property-success');
         return const Either.right(
           PropertySuccess.created(),
+        );
+      },
+      networkError: (stackTrace) {
+        developer.log(
+          stackTrace.toString(),
+          name: 'property-networkError',
+        );
+        return const Either.left(
+          Failure.network(),
+        );
+      },
+      unhandledError: (exception, stackTrace) {
+        developer.log(
+          stackTrace.toString(),
+          name: 'property-unhandledError',
+        );
+
+        return const Either.left(
+          Failure.unknown(),
+        );
+      },
+    );
+  }
+
+  Future<Either<Failure, PropertyModel>> getPaginated({
+    int page = 1,
+    int limit = 10,
+  }) async {
+    final accessToken = await _deviceUtilHelper.token;
+    final result = await _http.request(
+      'property/',
+      bearerToken: accessToken,
+      queryParameters: {
+        'page': page,
+        'limit': limit,
+      },
+    );
+
+    return result.when(
+      success: (statusCode, data) {
+        final model = propertyModelFromJson(data);
+        developer.log(data, name: 'property-get');
+        return Either.right(
+          model,
         );
       },
       networkError: (stackTrace) {

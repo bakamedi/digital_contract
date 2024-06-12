@@ -1,4 +1,4 @@
-import 'package:digital_contract/app/presentation/global/extensions/widgets_ext.dart';
+import 'package:digital_contract/app/core/extensions/widgets_ext.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/icons/digital_contract_icons.dart';

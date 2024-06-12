@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/icons/digital_contract_icons.dart';
 import '../../../../../../core/responsive/responsive.dart';
-import '../../../../../global/extensions/widgets_ext.dart';
+import '../../../../../../core/extensions/widgets_ext.dart';
 import '../../../../../global/widgets/input_fields/text_text_form_field.dart';
 import '../../controller/new_contract_controller.dart';
 import '../../utils/service.enum.dart';

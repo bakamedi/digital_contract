@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:extended_image/extended_image.dart';
 
-import '../../../../../core/icons/digital_contract_icons.dart';
-import '../../../../../core/responsive/responsive.dart';
-import '../../../../../core/theme/theme_app_data.dart';
-import '../../../../global/utils/images_path.dart';
-import '../../../../global/widgets/amenities.dart';
-import '../utils/go_to_contract.dart';
+import '../../../../../../../core/icons/digital_contract_icons.dart';
+import '../../../../../../../core/responsive/responsive.dart';
+import '../../../../../../../core/theme/theme_app_data.dart';
+import '../../../../../../../domain/models/property/response/property_model.dart';
+import '../../../../../../global/utils/images_path.dart';
+import '../../../../../../global/widgets/amenities.dart';
+import '../../../../../../global/widgets/custom_text.dart';
+import '../../../../views/utils/go_to_contract.dart';
 
 const radiusCircular = Radius.circular(10);
 
 class ContractItem extends StatelessWidget {
-  final bool isSignContract;
+  final Datum property;
   const ContractItem({
     super.key,
-    required this.isSignContract,
+    required this.property,
   });
 
   @override
@@ -50,18 +52,19 @@ class ContractItem extends StatelessWidget {
                     ),
                   ),
                   _itemPay(
-                    name: '\$220.00 Mensual',
+                    name: '\$${property.price} Mensual',
                     responsive: responsive,
                     isMoney: true,
                   ),
                   _signContractIcon(
                     responsive: responsive,
-                    iconData: isSignContract
+                    iconData: false
                         ? DigitalContractIcons.file_circle_check_solid
                         : DigitalContractIcons.file_invoice_solid,
                   ),
                   Amenities(
                     responsive: responsive,
+                    property: property,
                   ),
                 ],
               ),
@@ -73,20 +76,14 @@ class ContractItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Samanes 4, Mz 888 Solar 342',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: responsive.dp(1.8),
-                    ),
+                  CustomText(
+                    property.address ?? '',
                   ),
-                  Text(
-                    'Arrendatario: Bakke Medina Abarca',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w500,
-                      fontSize: responsive.dp(1.55),
-                    ),
+                  CustomText(
+                    'Arrendatario: ',
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w500,
+                    fontSize: responsive.dp(1.55),
                   ),
                 ],
               ),

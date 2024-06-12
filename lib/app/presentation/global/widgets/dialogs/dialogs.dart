@@ -29,6 +29,7 @@ abstract class Dialogs {
     TextStyle? textStyle,
     Decoration? decorationContent,
     IconData? iconData,
+    Function()? onFunctionAfterOk,
   }) {
     final Responsive responsive = Responsive(context);
 
@@ -91,7 +92,12 @@ abstract class Dialogs {
               fontSize: responsive.dp(1.1),
               horizontalSpace: responsive.bwh(10),
               verticalSpace: responsive.bhp(1),
-              onPressed: () => context.pop(),
+              onPressed: () {
+                context.pop();
+                try {
+                  onFunctionAfterOk!();
+                } catch (_) {}
+              },
             ),
           ],
         ),

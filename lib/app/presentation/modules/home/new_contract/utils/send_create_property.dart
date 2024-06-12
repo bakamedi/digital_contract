@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../global/controller/loader/loader_gc.dart';
 import '../../../../global/widgets/dialogs/dialogs.dart';
@@ -23,6 +24,7 @@ void sendCreateProperty(BuildContext context) async {
         type: DialogType.success,
         title: 'Exito',
         content: 'Al crear la propiedad',
+        onFunctionAfterOk: () => context.pop(),
       );
     },
   );

@@ -1,4 +1,4 @@
-import 'package:digital_contract/app/presentation/global/extensions/widgets_ext.dart';
+import 'package:digital_contract/app/core/extensions/widgets_ext.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';

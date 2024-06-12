@@ -26,6 +26,9 @@ class ContractItem extends StatelessWidget {
     return InkWell(
       onTap: () => goToContract(context),
       child: Container(
+        margin: EdgeInsets.symmetric(
+          vertical: responsive.bhp(1),
+        ),
         decoration: BoxDecoration(
           color: ThemeAppData.whiteColor,
           borderRadius: const BorderRadius.all(
@@ -79,12 +82,12 @@ class ContractItem extends StatelessWidget {
                   CustomText(
                     property.address ?? '',
                   ),
-                  CustomText(
-                    'Arrendatario: ',
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w500,
-                    fontSize: responsive.dp(1.55),
-                  ),
+                  // CustomText(
+                  //   'Arrendatario: ',
+                  //   color: Colors.grey,
+                  //   fontWeight: FontWeight.w500,
+                  //   fontSize: responsive.dp(1.55),
+                  // ),
                 ],
               ),
             ),

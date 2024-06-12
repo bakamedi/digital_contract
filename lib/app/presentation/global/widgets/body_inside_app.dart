@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_meedu/consumer/consumer_widget.dart';
 
 import '../../../core/responsive/responsive.dart';
 import '../../../core/theme/theme_app_data.dart';
-import '../controller/utils/init_maps.dart';
-import 'custom_text.dart';
+import '../utils/action_btn.dart';
 
-class BodyInsideApp extends StatelessWidget {
+class BodyInsideApp extends ConsumerWidget {
   final Widget body;
   final Widget? bottomNavigationBar;
   const BodyInsideApp({
@@ -15,26 +15,16 @@ class BodyInsideApp extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     final responsive = Responsive(context);
     return Scaffold(
       backgroundColor: ThemeAppData.backgroundLightColor,
       bottomNavigationBar: bottomNavigationBar,
       resizeToAvoidBottomInset: true,
       body: body,
-      floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: ThemeAppData.blackColor,
-        onPressed: () => initMaps(context),
-        label: CustomText(
-          'Nuevo',
-          fontSize: responsive.dp(1.5),
-          color: ThemeAppData.whiteColor,
-        ),
-        icon: Icon(
-          Icons.add,
-          color: ThemeAppData.whiteColor,
-          size: responsive.dp(2),
-        ),
+      floatingActionButton: actionBtn(
+        context,
+        responsive,
       ),
     );
   }

@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomeState {
-  int get currentPageIndex => throw _privateConstructorUsedError;
+  String get currentPagePath => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -28,7 +28,7 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({int currentPageIndex});
+  $Res call({String currentPagePath});
 }
 
 /// @nodoc
@@ -44,13 +44,13 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentPageIndex = null,
+    Object? currentPagePath = null,
   }) {
     return _then(_value.copyWith(
-      currentPageIndex: null == currentPageIndex
-          ? _value.currentPageIndex
-          : currentPageIndex // ignore: cast_nullable_to_non_nullable
-              as int,
+      currentPagePath: null == currentPagePath
+          ? _value.currentPagePath
+          : currentPagePath // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -63,7 +63,7 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int currentPageIndex});
+  $Res call({String currentPagePath});
 }
 
 /// @nodoc
@@ -77,13 +77,13 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentPageIndex = null,
+    Object? currentPagePath = null,
   }) {
     return _then(_$HomeStateImpl(
-      currentPageIndex: null == currentPageIndex
-          ? _value.currentPageIndex
-          : currentPageIndex // ignore: cast_nullable_to_non_nullable
-              as int,
+      currentPagePath: null == currentPagePath
+          ? _value.currentPagePath
+          : currentPagePath // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -91,15 +91,15 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomeStateImpl extends _HomeState {
-  const _$HomeStateImpl({this.currentPageIndex = 0}) : super._();
+  const _$HomeStateImpl({this.currentPagePath = ''}) : super._();
 
   @override
   @JsonKey()
-  final int currentPageIndex;
+  final String currentPagePath;
 
   @override
   String toString() {
-    return 'HomeState(currentPageIndex: $currentPageIndex)';
+    return 'HomeState(currentPagePath: $currentPagePath)';
   }
 
   @override
@@ -107,12 +107,12 @@ class _$HomeStateImpl extends _HomeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeStateImpl &&
-            (identical(other.currentPageIndex, currentPageIndex) ||
-                other.currentPageIndex == currentPageIndex));
+            (identical(other.currentPagePath, currentPagePath) ||
+                other.currentPagePath == currentPagePath));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, currentPageIndex);
+  int get hashCode => Object.hash(runtimeType, currentPagePath);
 
   @JsonKey(ignore: true)
   @override
@@ -122,11 +122,11 @@ class _$HomeStateImpl extends _HomeState {
 }
 
 abstract class _HomeState extends HomeState {
-  const factory _HomeState({final int currentPageIndex}) = _$HomeStateImpl;
+  const factory _HomeState({final String currentPagePath}) = _$HomeStateImpl;
   const _HomeState._() : super._();
 
   @override
-  int get currentPageIndex;
+  String get currentPagePath;
   @override
   @JsonKey(ignore: true)
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>

@@ -10,15 +10,13 @@ final homeProvider = Provider.state<HomeController, HomeState>(
 class HomeController extends StateNotifier<HomeState> {
   HomeController() : super(HomeState.initialState);
 
-  void changePageIndex(int currentPageIndex) {
+  void changePageIndex(String currentPagePath) {
     onlyUpdate(
       state = state.copyWith(
-        currentPageIndex: currentPageIndex,
+        currentPagePath: currentPagePath,
       ),
     );
   }
 
-  int getCurrentPageIndex() {
-    return state.currentPageIndex;
-  }
+  String get currentPagePath => state.currentPagePath;
 }

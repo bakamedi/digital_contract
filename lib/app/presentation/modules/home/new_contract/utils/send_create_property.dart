@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../../global/controller/loader/loader_gc.dart';
 import '../../../../global/widgets/dialogs/dialogs.dart';
+import '../../submodules/property_contracts/controller/property_contract_controller.dart';
 import '../controller/new_contract_controller.dart';
 
 void sendCreateProperty(BuildContext context) async {
+  final propertyContractController = propertyContractProvider.read();
   final loaderGC = loaderGlobalProvider.read();
   final newContractController = newContractProvider.read();
   loaderGC.showLoader(loading: true);
@@ -24,7 +25,11 @@ void sendCreateProperty(BuildContext context) async {
         type: DialogType.success,
         title: 'Exito',
         content: 'Al crear la propiedad',
-        onFunctionAfterOk: () => context.pop(),
+        onFunctionAfterOk: () {
+          loaderGC.showLoader(loading: true);
+          propertyContractController.load(1, 10);
+          loaderGC.showLoader(loading: false);
+        },
       );
     },
   );

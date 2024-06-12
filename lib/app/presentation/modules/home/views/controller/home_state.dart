@@ -6,7 +6,8 @@ part 'home_state.freezed.dart';
 class HomeState with _$HomeState {
   const HomeState._();
   const factory HomeState({
-    @Default(0) int currentPageIndex,
+    @Default('') String currentPagePath,
   }) = _HomeState;
-  static HomeState get initialState => const HomeState();
+  static HomeState get initialState =>
+      const HomeState(currentPagePath: '/home');
 }

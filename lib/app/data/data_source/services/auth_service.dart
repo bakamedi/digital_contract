@@ -16,7 +16,7 @@ class AuthService {
     required String password,
   }) async {
     final result = await _http.request(
-      '/v1/api/user/login',
+      'user/login/',
       method: HttpMethod.POST,
       data: {
         "email": email,

@@ -5,12 +5,15 @@ import 'package:flutter_meedu/providers.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 import 'data/data_source/services/auth_service.dart';
+import 'data/data_source/services/property_service.dart';
 import 'data/helpers/device_util_helper.dart';
 import 'data/http_helper.dart';
 import 'data/repositories_impl/auth_repository_impl.dart';
 import 'data/repositories_impl/device_utils_repository_impl.dart';
+import 'data/repositories_impl/property_repository_impl.dart';
 import 'domain/repositories/auth_repository.dart';
 import 'domain/repositories/device_utils_repository.dart';
+import 'domain/repositories/property_repository.dart';
 
 const httpDuration = Duration(
   seconds: 30,
@@ -18,7 +21,7 @@ const httpDuration = Duration(
 
 final _dio = Dio(
   BaseOptions(
-    baseUrl: 'http://192.168.100.173:3000', // depa
+    baseUrl: 'http://192.168.100.173:3000/v1/api/', // depa
     connectTimeout: httpDuration,
     receiveTimeout: httpDuration,
     sendTimeout: httpDuration,
@@ -56,6 +59,13 @@ final authService = Provider(
   ),
 );
 
+final _propertyService = Provider(
+  (ref) => PropertyService(
+    http: _httpProvider.read(),
+    deviceUtilHelper: _deviceUtil.read(),
+  ),
+);
+
 class Repositories {
   Repositories._();
 
@@ -69,6 +79,12 @@ class Repositories {
   static final deviceUtil = Provider<DeviceUtilsRepository>(
     (ref) => DeviceUtilsRepositoryImpl(
       deviceUtilHelper: _deviceUtil.read(),
+    ),
+  );
+
+  static final propertyRep = Provider<PropertyRepository>(
+    (ref) => PropertyRepositoryImpl(
+      propertyService: _propertyService.read(),
     ),
   );
 }

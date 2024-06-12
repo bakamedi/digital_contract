@@ -4,7 +4,12 @@ import 'package:flutter_meedu/providers.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../../../dependency_injection.dart.dart';
+import '../../../../../domain/failures/failure.dart';
 import '../../../../../domain/models/property/dto/property_dto.dart';
+import '../../../../../domain/repositories/property_repository.dart';
+import '../../../../../domain/success/property_success.dart';
+import '../../../../../domain/typedefs.dart';
 import '../../../../global/utils/money_currency.dart';
 import '../utils/service.enum.dart';
 import '../utils/update_field_property.dart';
@@ -14,11 +19,19 @@ import '../../../../global/extensions/double_ext.dart';
 
 final newContractProvider =
     Provider.state<NewContractController, NewContractState>(
-  (_) => NewContractController(),
+  (_) => NewContractController(
+    NewContractState.initialState,
+    propertyRepository: Repositories.propertyRep.read(),
+  ),
 );
 
 class NewContractController extends StateNotifier<NewContractState> {
-  NewContractController() : super(NewContractState.initialState);
+  final PropertyRepository _propertyRepository;
+
+  NewContractController(
+    super.initialState, {
+    required PropertyRepository propertyRepository,
+  }) : _propertyRepository = propertyRepository;
 
   PageController? get stepperContractController =>
       state.stepperContractController;
@@ -29,7 +42,7 @@ class NewContractController extends StateNotifier<NewContractState> {
   String get landLordNui => state.landLordNui;
   String get landLordPhone => state.landLordPhone;
   double get propertyPrice => CurrencyMoneyUtil.formatAmountDouble(
-        state.propertyPrice,
+        state.price,
       );
   String get city => state.city;
   int get rooms => state.rooms;
@@ -48,12 +61,20 @@ class NewContractController extends StateNotifier<NewContractState> {
         state.serviceInternetPrice,
       );
 
-  PropertyDto createPropertyDTO() {
+  FutureEither<Failure, PropertySuccess> createProperty() async {
+    return await _propertyRepository.create(
+      _createPropertyDTO(),
+    );
+  }
+
+  PropertyDto _createPropertyDTO() {
     return PropertyDto(
       address: address,
       rooms: rooms,
       bathrooms: bathRooms,
-      propertyPrice: propertyPrice,
+      price: propertyPrice,
+      lat: lat,
+      lng: lng,
       electricService: serviceElectricityPrice.isServiceEnabled,
       waterService: serviceElectricityPrice.isServiceEnabled,
       internetService: serviceInternetPrice.isServiceEnabled,
@@ -99,19 +120,6 @@ class NewContractController extends StateNotifier<NewContractState> {
         state = state.copyWith(
           nextDoneTxt: 'Crear Propiedad',
         ),
-      );
-    }
-  }
-
-  void changeStepper() {
-    const duration = Duration(milliseconds: 500);
-    const curve = Curves.ease;
-    final page = stepperContractController!.page;
-    if (page == 2.0) {
-    } else {
-      stepperContractController!.nextPage(
-        duration: duration,
-        curve: curve,
       );
     }
   }
@@ -185,7 +193,7 @@ class NewContractController extends StateNotifier<NewContractState> {
       case UpdateFieldProperty.propertyPrice:
         onlyUpdate(
           state = state.copyWith(
-            propertyPrice: value ?? '',
+            price: value ?? '',
           ),
         );
     }

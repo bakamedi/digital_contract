@@ -1,6 +1,6 @@
 import '../../domain/either.dart';
 import '../../domain/failures/sign_in_failure.dart';
-import '../../domain/models/user_model.dart';
+import '../../domain/models/user/user_model.dart';
 import '../../domain/repositories/auth_repository.dart';
 import '../../domain/success/sign_in_success.dart';
 import '../../domain/typedefs.dart';

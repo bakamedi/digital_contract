@@ -1,5 +1,5 @@
 import '../failures/sign_in_failure.dart';
-import '../models/user_model.dart';
+import '../models/user/user_model.dart';
 import '../success/sign_in_success.dart';
 import '../typedefs.dart';
 

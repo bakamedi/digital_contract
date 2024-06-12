@@ -3,7 +3,7 @@ import 'package:flutter_meedu/providers.dart';
 
 import '../../../core/either.dart';
 import '../../../dependency_injection.dart.dart';
-import '../../../domain/models/user_model.dart';
+import '../../../domain/models/user/user_model.dart';
 import '../../../domain/repositories/auth_repository.dart';
 
 final sessionGlobalProvider =

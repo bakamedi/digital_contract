@@ -19,17 +19,22 @@ class HttpHelper {
     HttpMethod method = HttpMethod.GET,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic> headers = const {},
+    String? bearerToken,
     dynamic data,
     T Function(dynamic responseData)? parser,
     int retry = 1,
     int intents = 0,
   }) async {
     try {
+      final Map<String, dynamic> finalHeaders = {
+        ...headers,
+        if (bearerToken != null) 'Authorization': 'Bearer $bearerToken',
+      };
       final response = await _dio.request(
         pathOrUrl,
         options: Options(
           method: method.name,
-          headers: headers,
+          headers: finalHeaders,
         ),
         queryParameters: queryParameters,
         data: data,

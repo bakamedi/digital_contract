@@ -23,7 +23,7 @@ abstract class Dialogs {
   /// Dialogo Simple que aparece con una sola opcion que desaparece
   static Future<void> simple(
     BuildContext context, {
-    DialogType? type,
+    DialogType? type = DialogType.error,
     required String title,
     required String content,
     TextStyle? textStyle,

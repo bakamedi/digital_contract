@@ -23,7 +23,9 @@ mixin _$PropertyDto {
   String? get address => throw _privateConstructorUsedError;
   int? get rooms => throw _privateConstructorUsedError;
   int? get bathrooms => throw _privateConstructorUsedError;
-  double? get propertyPrice => throw _privateConstructorUsedError;
+  double? get lat => throw _privateConstructorUsedError;
+  double? get lng => throw _privateConstructorUsedError;
+  double? get price => throw _privateConstructorUsedError;
   bool? get electricService => throw _privateConstructorUsedError;
   bool? get waterService => throw _privateConstructorUsedError;
   bool? get internetService => throw _privateConstructorUsedError;
@@ -47,7 +49,9 @@ abstract class $PropertyDtoCopyWith<$Res> {
       {String? address,
       int? rooms,
       int? bathrooms,
-      double? propertyPrice,
+      double? lat,
+      double? lng,
+      double? price,
       bool? electricService,
       bool? waterService,
       bool? internetService,
@@ -72,7 +76,9 @@ class _$PropertyDtoCopyWithImpl<$Res, $Val extends PropertyDto>
     Object? address = freezed,
     Object? rooms = freezed,
     Object? bathrooms = freezed,
-    Object? propertyPrice = freezed,
+    Object? lat = freezed,
+    Object? lng = freezed,
+    Object? price = freezed,
     Object? electricService = freezed,
     Object? waterService = freezed,
     Object? internetService = freezed,
@@ -93,9 +99,17 @@ class _$PropertyDtoCopyWithImpl<$Res, $Val extends PropertyDto>
           ? _value.bathrooms
           : bathrooms // ignore: cast_nullable_to_non_nullable
               as int?,
-      propertyPrice: freezed == propertyPrice
-          ? _value.propertyPrice
-          : propertyPrice // ignore: cast_nullable_to_non_nullable
+      lat: freezed == lat
+          ? _value.lat
+          : lat // ignore: cast_nullable_to_non_nullable
+              as double?,
+      lng: freezed == lng
+          ? _value.lng
+          : lng // ignore: cast_nullable_to_non_nullable
+              as double?,
+      price: freezed == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
               as double?,
       electricService: freezed == electricService
           ? _value.electricService
@@ -137,7 +151,9 @@ abstract class _$$PropertyDtoImplCopyWith<$Res>
       {String? address,
       int? rooms,
       int? bathrooms,
-      double? propertyPrice,
+      double? lat,
+      double? lng,
+      double? price,
       bool? electricService,
       bool? waterService,
       bool? internetService,
@@ -160,7 +176,9 @@ class __$$PropertyDtoImplCopyWithImpl<$Res>
     Object? address = freezed,
     Object? rooms = freezed,
     Object? bathrooms = freezed,
-    Object? propertyPrice = freezed,
+    Object? lat = freezed,
+    Object? lng = freezed,
+    Object? price = freezed,
     Object? electricService = freezed,
     Object? waterService = freezed,
     Object? internetService = freezed,
@@ -181,9 +199,17 @@ class __$$PropertyDtoImplCopyWithImpl<$Res>
           ? _value.bathrooms
           : bathrooms // ignore: cast_nullable_to_non_nullable
               as int?,
-      propertyPrice: freezed == propertyPrice
-          ? _value.propertyPrice
-          : propertyPrice // ignore: cast_nullable_to_non_nullable
+      lat: freezed == lat
+          ? _value.lat
+          : lat // ignore: cast_nullable_to_non_nullable
+              as double?,
+      lng: freezed == lng
+          ? _value.lng
+          : lng // ignore: cast_nullable_to_non_nullable
+              as double?,
+      price: freezed == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
               as double?,
       electricService: freezed == electricService
           ? _value.electricService
@@ -220,7 +246,9 @@ class _$PropertyDtoImpl implements _PropertyDto {
       {this.address,
       this.rooms,
       this.bathrooms,
-      this.propertyPrice,
+      this.lat,
+      this.lng,
+      this.price,
       this.electricService,
       this.waterService,
       this.internetService,
@@ -238,7 +266,11 @@ class _$PropertyDtoImpl implements _PropertyDto {
   @override
   final int? bathrooms;
   @override
-  final double? propertyPrice;
+  final double? lat;
+  @override
+  final double? lng;
+  @override
+  final double? price;
   @override
   final bool? electricService;
   @override
@@ -254,7 +286,7 @@ class _$PropertyDtoImpl implements _PropertyDto {
 
   @override
   String toString() {
-    return 'PropertyDto(address: $address, rooms: $rooms, bathrooms: $bathrooms, propertyPrice: $propertyPrice, electricService: $electricService, waterService: $waterService, internetService: $internetService, electricServicePrice: $electricServicePrice, waterServicePrice: $waterServicePrice, internetServicePrice: $internetServicePrice)';
+    return 'PropertyDto(address: $address, rooms: $rooms, bathrooms: $bathrooms, lat: $lat, lng: $lng, price: $price, electricService: $electricService, waterService: $waterService, internetService: $internetService, electricServicePrice: $electricServicePrice, waterServicePrice: $waterServicePrice, internetServicePrice: $internetServicePrice)';
   }
 
   @override
@@ -266,8 +298,9 @@ class _$PropertyDtoImpl implements _PropertyDto {
             (identical(other.rooms, rooms) || other.rooms == rooms) &&
             (identical(other.bathrooms, bathrooms) ||
                 other.bathrooms == bathrooms) &&
-            (identical(other.propertyPrice, propertyPrice) ||
-                other.propertyPrice == propertyPrice) &&
+            (identical(other.lat, lat) || other.lat == lat) &&
+            (identical(other.lng, lng) || other.lng == lng) &&
+            (identical(other.price, price) || other.price == price) &&
             (identical(other.electricService, electricService) ||
                 other.electricService == electricService) &&
             (identical(other.waterService, waterService) ||
@@ -289,7 +322,9 @@ class _$PropertyDtoImpl implements _PropertyDto {
       address,
       rooms,
       bathrooms,
-      propertyPrice,
+      lat,
+      lng,
+      price,
       electricService,
       waterService,
       internetService,
@@ -316,7 +351,9 @@ abstract class _PropertyDto implements PropertyDto {
       {final String? address,
       final int? rooms,
       final int? bathrooms,
-      final double? propertyPrice,
+      final double? lat,
+      final double? lng,
+      final double? price,
       final bool? electricService,
       final bool? waterService,
       final bool? internetService,
@@ -334,7 +371,11 @@ abstract class _PropertyDto implements PropertyDto {
   @override
   int? get bathrooms;
   @override
-  double? get propertyPrice;
+  double? get lat;
+  @override
+  double? get lng;
+  @override
+  double? get price;
   @override
   bool? get electricService;
   @override

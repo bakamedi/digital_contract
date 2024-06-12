@@ -24,22 +24,22 @@ class OwnerServices extends StatelessWidget {
         children: [
           InputTextField(
             onChanged: (value) => newContractController.onChangeField(
-              UpdateFieldProperty.city,
-              value,
-            ),
-            backgroundText: 'Ciudad',
-            prefixIcon: const Icon(
-              DigitalContractIcons.city_solid,
-            ),
-          ),
-          InputTextField(
-            onChanged: (value) => newContractController.onChangeField(
               UpdateFieldProperty.province,
               value,
             ),
             backgroundText: 'Provincia',
             prefixIcon: const Icon(
               DigitalContractIcons.circle_question_regular,
+            ),
+          ),
+          InputTextField(
+            onChanged: (value) => newContractController.onChangeField(
+              UpdateFieldProperty.city,
+              value,
+            ),
+            backgroundText: 'Ciudad',
+            prefixIcon: const Icon(
+              DigitalContractIcons.city_solid,
             ),
           ),
           InputTextField(
